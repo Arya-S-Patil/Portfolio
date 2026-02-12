@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLIMBING.IN - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <img src="{{ url_for('static', filename='assets/loading.gif') }}" 
+                 alt="Loading" 
+                 class="loading-gif">
+            
+        </div>
+    </div>
+
+    <!-- Menu Button -->
+    <button class="menu-button" id="menu-button">
+        <span class="menu-star">★</span>
+        <span>Menu</span>
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div class="menu-dropdown" id="menu-dropdown">
+        <a href="#projects" class="menu-item">Projects</a>
+        <a href="#about" class="menu-item">About Me</a>
+        <a href="#contact" class="menu-item">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-sticker-section" id="hero">
+        <div class="container">
+            
+            <!-- Central Image -->
+            <div class="flip-card image-flip">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{ url_for('static', filename='images/profile.png') }}" 
+                             alt="Profile">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/profile-back.png') }}" 
+                             alt="Profile Back">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticker 1 - Top Left -->
+            <div class="flip-card sticker sticker-1">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{ url_for('static', filename='images/sticker1.png') }}" 
+                             alt="Sticker 1">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/sticker1-back.png') }}" 
+                             alt="Sticker 1 Back">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticker 2 - Top Right -->
+            <div class="flip-card sticker sticker-2">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{ url_for('static', filename='images/sticker2.png') }}" 
+                             alt="Sticker 2">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/sticker2-back.png') }}" 
+                             alt="Sticker 2 Back">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticker 3 - Middle Left -->
+            <div class="flip-card sticker sticker-3">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{ url_for('static', filename='images/sticker3.png') }}" 
+                             alt="Sticker 3">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/sticker3-back.png') }}" 
+                             alt="Sticker 3 Back">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticker 4 - Middle Right -->
+            <div class="flip-card sticker sticker-4">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{ url_for('static', filename='images/sticker4.png') }}" 
+                             alt="Sticker 4">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/sticker4-back.png') }}" 
+                             alt="Sticker 4 Back">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo/Banner -->
+            <div class="flip-card logo-flip">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="logo-text">CLIMBING.IN</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/logo-back.png') }}" 
+                             alt="Logo Back"
+                             class="logo-back-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        
+        <!-- Section Title -->
+        <div class="section-header">
+            <div class="flip-card title-flip">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="title-banner">
+                            <h2 class="section-title">PROJECTS</h2>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="title-banner">
+                            <h2 class="section-title-back">MY WORK</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="category-filters">
+            {% for category in categories %}
+            <button class="filter-btn {% if category.slug == 'all' %}active{% endif %}" 
+                    data-category="{{ category.slug }}">
+                <span class="filter-icon">★</span>
+                <span class="filter-text">{{ category.name }}</span>
+            </button>
+            {% endfor %}
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+            {% for project in projects %}
+            <div class="project-card" 
+                 data-category="{{ project.category_slug }}"
+                 data-project-id="{{ project.id }}"
+                 data-scroll-animate>
+                
+                <div class="project-image">
+                    <!-- Static image (default) -->
+                    <img src="{{ project.image }}" 
+                         alt="{{ project.title }}"
+                         class="project-static-img"
+                         loading="lazy">
+                    
+                    <!-- GIF (plays on scroll) -->
+                    <img src="{{ url_for('static', filename='assets/projects/' + project.gif) }}" 
+                         alt="{{ project.title }} animation"
+                         class="project-gif-img"
+                         loading="lazy">
+                </div>
+                
+                <div class="project-info">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-category">{{ project.category }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        
+        <!-- Section Title -->
+        <div class="section-header">
+            <div class="flip-card title-flip">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="title-banner">
+                            <h2 class="section-title">ABOUT</h2>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="title-banner">
+                            <h2 class="section-title">KNOW ME</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Content -->
+        <div class="about-content-wrapper">
+            <div class="about-text-section">
+                <p class="about-intro">
+                    Morning! I'm <strong>PALAK</strong>, an aspiring communication designer / writer / 
+                    photographer / researcher / scribbler / freedom and hard work enjoyer. Based in 
+                    India, drawn to the power of art and design as a tool for exploration and storytelling.
+                </p>
+                
+                <div class="about-poem-portrait-row">
+                    <div class="about-poem">
+                        <p class="poem-intro">Here's small poem to best describe myself-</p>
+                        <blockquote>
+                            <p><em>I carry a theory without any evidence for it,</em></p>
+                            <p><em>only an ever-changing belief in the craft</em></p>
+                            <p><em>and its power to change me,</em></p>
+                            <p><em>to shape me into someone</em></p>
+                            <p><em>more observant, more open, and skilled.</em></p>
+                            <br>
+                            <p><em>All is wonder to eyes as fresh as mine,</em></p>
+                            <p><em>But the real magic or tragedy lies in the daily work,</em></p>
+                            <p><em>in sustaining an honest dialogue with it.</em></p>
+                            <br>
+                            <p><em>It asks only that I stay,</em></p>
+                            <p><em>working with patience and grit</em></p>
+                            <p><em>allowing the process to shape me</em></p>
+                            <p><em>As much as I shape it.</em></p>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="about-portrait-container">
+                        <img src="{{ url_for('static', filename='images/portrait.gif') }}" 
+                             alt="Portrait GIF"
+                             class="portrait-gif">
+                    </div>
+                </div>
+                
+                <button class="view-resume-btn" id="view-resume-btn">
+                    View Resume
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Row with Tagline -->
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        
+        <!-- Section Title -->
+        <div class="section-header">
+            <div class="flip-card title-flip">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="title-banner">
+                            <h2 class="section-title">IF SOMETHING STAYED WITH YOU></h2>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="title-banner">
+                            <h2 class="section-title-back">LET'S CONNECT</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Content -->
+        <div class="contact-content">
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="/cdn-cgi/l/email-protection#3e7d5257535c5750591057500e0e7e59535f5752105d5153" class="contact-email">
+                        <span class="__cf_email__" data-cfemail="46052a2f2b242f2821682f28767606212b272f2a6825292b">[email&#160;protected]</span>
+                    </a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="green-star">✱</span>
+                    <a href="tel:+917796479883" class="contact-phone">
+                        +91 7796479883
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#" class="social-link" target="_blank">
+                    <img src="{{ url_for('static', filename='images/behance-icon.png') }}" 
+                         alt="Behance"
+                         class="social-icon">
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                    <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" 
+                         alt="Instagram"
+                         class="social-icon">
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                    <img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" 
+                         alt="LinkedIn"
+                         class="social-icon">
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                    <img src="{{ url_for('static', filename='images/medium-icon.png') }}" 
+                         alt="Medium"
+                         class="social-icon">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Modal -->
+    <div class="resume-modal" id="resume-modal">
+        <div class="resume-modal-content">
+            
+            <button class="close-resume" id="close-resume">
+                ✕
+            </button>
+            
+            <a href="{{ url_for('static', filename='assets/resume.pdf') }}" 
+               download="Palak_Resume.pdf" 
+               class="download-resume-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Resume
+            </a>
+            
+            <iframe src="{{ url_for('static', filename='assets/resume.pdf') }}" 
+                    class="resume-iframe"
+                    frameborder="0">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div class="project-detail" id="project-detail">
+        
+        <button class="close-project" id="close-project">
+            ✕
+        </button>
+        
+        <div class="project-detail-left">
+            <div class="project-info-category" id="detail-category"></div>
+            <h2 class="project-info-title" id="detail-title"></h2>
+            <p class="project-info-description" id="detail-description"></p>
+            
+            <div class="project-nav-buttons">
+                <button class="nav-btn" id="prev-project">← Previous</button>
+                <button class="nav-btn" id="next-project">Next →</button>
+            </div>
+        </div>
+        
+        <div class="project-detail-right" id="detail-images">
+        </div>
+        
+        <!-- Buttons shown only on mobile at end of scroll -->
+        <div class="project-nav-buttons-mobile">
+            <button class="nav-btn" id="prev-project-mobile">← Previous</button>
+            <button class="nav-btn" id="next-project-mobile">Next →</button>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div class="resume-modal" id="resume-modal">
+        <div class="resume-modal-content">
+            
+            <button class="close-resume" id="close-resume">
+                ✕
+            </button>
+            
+            <a href="{{ url_for('static', filename='assets/resume.pdf') }}" 
+               download="Palak_Resume.pdf" 
+               class="download-resume-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download Resume
+            </a>
+            
+            <iframe src="{{ url_for('static', filename='assets/resume.pdf') }}" 
+                    class="resume-iframe"
+                    frameborder="0">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
