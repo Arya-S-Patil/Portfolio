@@ -64,13 +64,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Detect if device is touch-enabled
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     
+    // Track flip timeouts for each element
+    const flipTimeouts = new WeakMap();
+    
     // Stickers: Simple hover flip or tap for mobile
     stickers.forEach(sticker => {
         if (isTouchDevice) {
-            // On touch devices, toggle on tap
+            // On touch devices, toggle on tap and auto-flip back after 3 seconds
             sticker.addEventListener('click', function(e) {
                 e.preventDefault();
-                this.classList.toggle('flipped');
+                this.classList.add('flipped');
+                
+                // Clear any existing timeout
+                if (flipTimeouts.has(this)) {
+                    clearTimeout(flipTimeouts.get(this));
+                }
+                
+                // Set new timeout to flip back
+                const timeout = setTimeout(() => {
+                    this.classList.remove('flipped');
+                }, 3000);
+                
+                flipTimeouts.set(this, timeout);
             });
         } else {
             // On desktop, hover behavior
@@ -90,7 +105,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isTouchDevice) {
             profileImage.addEventListener('click', function(e) {
                 e.preventDefault();
-                this.classList.toggle('flipped');
+                this.classList.add('flipped');
+                
+                // Clear any existing timeout
+                if (flipTimeouts.has(this)) {
+                    clearTimeout(flipTimeouts.get(this));
+                }
+                
+                // Set new timeout to flip back
+                const timeout = setTimeout(() => {
+                    this.classList.remove('flipped');
+                }, 3000);
+                
+                flipTimeouts.set(this, timeout);
             });
         } else {
             profileImage.addEventListener('mouseenter', function() {
@@ -109,7 +136,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isTouchDevice) {
             logoFlip.addEventListener('click', function(e) {
                 e.preventDefault();
-                this.classList.toggle('flipped');
+                this.classList.add('flipped');
+                
+                // Clear any existing timeout
+                if (flipTimeouts.has(this)) {
+                    clearTimeout(flipTimeouts.get(this));
+                }
+                
+                // Set new timeout to flip back
+                const timeout = setTimeout(() => {
+                    this.classList.remove('flipped');
+                }, 3000);
+                
+                flipTimeouts.set(this, timeout);
             });
         } else {
             logoFlip.addEventListener('mouseenter', function() {
@@ -129,7 +168,19 @@ document.addEventListener('DOMContentLoaded', function() {
             card.addEventListener('click', function(e) {
                 // Don't toggle if clicking on a button or link inside
                 if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
-                    this.classList.toggle('flipped');
+                    this.classList.add('flipped');
+                    
+                    // Clear any existing timeout
+                    if (flipTimeouts.has(this)) {
+                        clearTimeout(flipTimeouts.get(this));
+                    }
+                    
+                    // Set new timeout to flip back
+                    const timeout = setTimeout(() => {
+                        this.classList.remove('flipped');
+                    }, 3000);
+                    
+                    flipTimeouts.set(this, timeout);
                 }
             });
         } else {
