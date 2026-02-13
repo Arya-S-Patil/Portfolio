@@ -54,6 +54,10 @@ html {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
+body:has(.loading-screen:not(.hidden)) {
+    overflow: hidden;
+}
+
 .loading-screen.hidden {
     opacity: 0;
     visibility: hidden;
@@ -242,15 +246,23 @@ html {
     position: relative;
     width: 100%;
     max-width: 700px;
-    height: 600px;
+    height: 750px;
     margin: 0 auto;
     overflow: visible !important;
 }
 
+/* Profile and Stickers Wrapper */
+.profile-stickers-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
 /* Central Image */
 .image-flip {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -311,11 +323,11 @@ html {
 }
 
 .sticker-1 {
-    top: 25%;
-    left: -50px;
-    width: 150px;
+    top: 20px;
+    left: 15px;
+    width: 220px;
     height: auto;
-    max-width: 150px;
+    max-width: 220px;
     animation-delay: 0s;
     transform-origin: center center;
     z-index: 10;
@@ -340,11 +352,11 @@ html {
 }
 
 .sticker-2 {
-    top: 15%;
-    right: -60px;
-    width: 180px;
+    top: 25px;
+    right: 15px;
+    width: 250px;
     height: auto;
-    max-width: 180px;
+    max-width: 250px;
     animation-delay: 0.5s;
     transform-origin: center center;
     z-index: 10;
@@ -369,11 +381,11 @@ html {
 }
 
 .sticker-3 {
-    bottom: 20%;
-    left: -45px;
-    width: 160px;
+    top: 35%;
+    left: -25px;
+    width: 220px;
     height: auto;
-    max-width: 160px;
+    max-width: 220px;
     animation-delay: 1s;
     transform-origin: center center;
     z-index: 10;
@@ -398,11 +410,11 @@ html {
 }
 
 .sticker-4 {
-    bottom: 15%;
-    right: -50px;
-    width: 170px;
+    top: 40%;
+    right: -25px;
+    width: 240px;
     height: auto;
-    max-width: 170px;
+    max-width: 240px;
     animation-delay: 1.5s;
     transform-origin: center center;
     z-index: 10;
@@ -432,7 +444,7 @@ html {
     max-width: 600px;
     height: 120px;
     position: absolute;
-    bottom: 20px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
