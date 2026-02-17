@@ -19,6 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingScreen.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
+        
+        // Trigger sticker fly-in animation
+        const profileWrapper = document.querySelector('.profile-stickers-wrapper');
+        if (profileWrapper) {
+            profileWrapper.classList.add('hero-animate');
+        }
+        
+        // Show profile image after stickers have flown in (~1.4s)
+        setTimeout(() => {
+            const profileImage = document.querySelector('.image-flip');
+            if (profileImage) {
+                profileImage.classList.add('profile-visible');
+            }
+        }, 1400);
+        
     }, 5000); // Show loading GIF for 5 seconds
 
     // ===================================

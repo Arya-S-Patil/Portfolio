@@ -21,7 +21,7 @@
 /* Force sticker visibility globally */
 .flip-card.sticker {
     display: block !important;
-    opacity: 1 !important;
+
     visibility: visible !important;
 }
 
@@ -230,6 +230,67 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 /* ===================================
+   HERO INTRO ANIMATIONS
+   Profile hidden until stickers land;
+   stickers fly from wrapper centre to their corner positions.
+   Wrapper: 700×750. Profile centre: (350, 375).
+   S1 TL centre≈(135,160) offset(-215,-215) → start at (+215,+215)
+   S2 TR centre≈(565,160) offset(+215,-215) → start at (-215,+215)
+   S3 BL centre≈(135,610) offset(-215,+235) → start at (+215,-235)
+   S4 BR centre≈(565,610) offset(+215,+235) → start at (-215,-235)
+   =================================== */
+
+.image-flip {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+.image-flip.profile-visible {
+    opacity: 1;
+}
+
+.sticker-1, .sticker-2, .sticker-3, .sticker-4 {
+    opacity: 0;
+}
+
+@keyframes sticker1-fly-in {
+    0%   { transform: translate(215px, 215px) rotate(-15deg) scale(0.5); opacity: 0; }
+    50%  { opacity: 1; }
+    100% { transform: translate(0,0) rotate(-15deg) scale(1); opacity: 1; }
+}
+@keyframes sticker2-fly-in {
+    0%   { transform: translate(-215px, 215px) rotate(8deg) scale(0.5); opacity: 0; }
+    50%  { opacity: 1; }
+    100% { transform: translate(0,0) rotate(8deg) scale(1); opacity: 1; }
+}
+@keyframes sticker3-fly-in {
+    0%   { transform: translate(215px, -235px) rotate(-5deg) scale(0.5); opacity: 0; }
+    50%  { opacity: 1; }
+    100% { transform: translate(0,0) rotate(-5deg) scale(1); opacity: 1; }
+}
+@keyframes sticker4-fly-in {
+    0%   { transform: translate(-215px, -235px) rotate(12deg) scale(0.5); opacity: 0; }
+    50%  { opacity: 1; }
+    100% { transform: translate(0,0) rotate(12deg) scale(1); opacity: 1; }
+}
+
+.hero-animate .sticker-1 {
+    animation: sticker1-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0s forwards,
+               wiggle 4s ease-in-out 0.8s infinite;
+}
+.hero-animate .sticker-2 {
+    animation: sticker2-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0.15s forwards,
+               wiggle 4s ease-in-out 1s infinite;
+}
+.hero-animate .sticker-3 {
+    animation: sticker3-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0.3s forwards,
+               wiggle 4s ease-in-out 1.2s infinite;
+}
+.hero-animate .sticker-4 {
+    animation: sticker4-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0.45s forwards,
+               wiggle 4s ease-in-out 1.4s infinite;
+}
+
+/* ===================================
    HERO SECTION - Flipping Stickers
    =================================== */
 .hero-sticker-section {
@@ -280,7 +341,6 @@ body:has(.loading-screen:not(.hidden)) {
 .image-flip .flip-card-back {
     border-radius: 50%;
     overflow: hidden;
-    border: 8px solid #fff;
     background: white;
 }
 
@@ -295,11 +355,9 @@ body:has(.loading-screen:not(.hidden)) {
 /* Stickers */
 .sticker {
     position: absolute !important;
-    animation: wiggle 4s ease-in-out infinite;
     z-index: 5 !important;
     pointer-events: auto !important;
     visibility: visible !important;
-    opacity: 1 !important;
     display: block !important;
     transform-origin: center center;
 }
@@ -323,11 +381,11 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .sticker-1 {
-    top: 20px;
-    left: 15px;
-    width: 220px;
+    top: 80px;
+    left: 55px;
+    width: 160px;
     height: auto;
-    max-width: 220px;
+    max-width: 160px;
     animation-delay: 0s;
     transform-origin: center center;
     z-index: 10;
@@ -352,11 +410,11 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .sticker-2 {
-    top: 25px;
-    right: 15px;
-    width: 250px;
+    top: 80px;
+    right: 55px;
+    width: 160px;
     height: auto;
-    max-width: 250px;
+    max-width: 160px;
     animation-delay: 0.5s;
     transform-origin: center center;
     z-index: 10;
@@ -381,11 +439,11 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .sticker-3 {
-    top: 35%;
-    left: -25px;
-    width: 220px;
+    top: 530px;
+    left: 55px;
+    width: 160px;
     height: auto;
-    max-width: 220px;
+    max-width: 160px;
     animation-delay: 1s;
     transform-origin: center center;
     z-index: 10;
@@ -410,11 +468,11 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .sticker-4 {
-    top: 40%;
-    right: -25px;
-    width: 240px;
+    top: 530px;
+    right: 55px;
+    width: 160px;
     height: auto;
-    max-width: 240px;
+    max-width: 160px;
     animation-delay: 1.5s;
     transform-origin: center center;
     z-index: 10;
@@ -456,33 +514,69 @@ body:has(.loading-screen:not(.hidden)) {
     transform: translateX(-50%); /* Keep centered, no scale */
 }
 
+/* Explicit heights so the back face renders correctly */
+.logo-flip .flip-card-inner {
+    width: 100%;
+    height: 120px;
+}
+
 .logo-flip .flip-card-front {
     background: linear-gradient(135deg, #f5f5dc, #e8e8c8);
-    border: 5px solid #4a9eff;
     border-radius: 20px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden;
 }
 
 .logo-flip .flip-card-back {
-    background: linear-gradient(135deg, #4a9eff, #2d7acc);
-    border: 5px solid #f5f5dc;
+    background: linear-gradient(135deg, #f5f5dc, #e8e8c8);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 2rem;
+}
+
+.logo-back-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--pink);
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+    position: relative;
+    z-index: 2;
 }
 
 .logo-text {
     font-family: 'Rubik Vinyl', cursive;
-    font-size: 80px;
+    font-size: 64px;
     color: var(--pink);
     letter-spacing: 4px;
+    line-height: 1;
+    white-space: nowrap;
 }
 
-.logo-back-image {
-    max-height: 100px;
-    width: auto;
-    max-width: 90%;
-    object-fit: contain;
+
+/* Banner back face needs explicit height to show text */
+.logo-flip .flip-card-front,
+.logo-flip .flip-card-back {
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo-flip .flip-card-back {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #f5f5dc, #e8e8c8) !important;
+    border-radius: 20px !important;
+    padding: 0 2rem !important;
 }
 
 /* ===================================
@@ -547,6 +641,15 @@ body:has(.loading-screen:not(.hidden)) {
 .title-flip .flip-card-back {
     width: 100%;
     height: 100%;
+    background: var(--pink);
+    border-radius: 12px;
+}
+
+.title-flip .flip-card-back .title-banner {
+    height: 100%;
+    width: 100%;
+    background: var(--pink);
+    border-radius: 12px;
 }
 
 /* Category Filters */
@@ -1203,7 +1306,7 @@ body:has(.loading-screen:not(.hidden)) {
     
     /* Ensure stickers are visible */
     .sticker {
-        opacity: 1 !important;
+    
         visibility: visible !important;
         pointer-events: auto !important;
     }
@@ -1328,7 +1431,7 @@ body:has(.loading-screen:not(.hidden)) {
     
     /* Make stickers visible on mobile */
     .sticker {
-        opacity: 1 !important;
+    
         visibility: visible !important;
         pointer-events: auto !important;
     }
@@ -1433,7 +1536,7 @@ body:has(.loading-screen:not(.hidden)) {
     
     /* Ensure stickers are visible */
     .sticker {
-        opacity: 1 !important;
+    
         visibility: visible !important;
         pointer-events: auto !important;
     }
