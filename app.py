@@ -28,7 +28,7 @@ PROJECTS = [
         'category': 'Publication Design',
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800',
-        'gif': 'project-pub-2.gif',  # Project-specific GIF
+        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
         'description': 'A contemporary magazine layout exploring modern typography and grid systems.',
         'images': [
             'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200',
@@ -56,7 +56,7 @@ PROJECTS = [
         'category': 'Branding',
         'category_slug': 'branding',
         'image': 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
-        'gif': 'project-brand-2.gif',  # Project-specific GIF
+        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
         'description': 'Modern brand identity for an AI-focused tech startup with a bold visual language.',
         'images': [
             'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200',
@@ -71,7 +71,7 @@ PROJECTS = [
         'category': 'Photo Essay',
         'category_slug': 'photo',
         'image': 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200',
-        'gif': 'project-photo-1.gif',  # Project-specific GIF
+        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
         'description': 'A photographic journey through the streets of Delhi, capturing daily life and architecture.',
         'images': [
             'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200',
@@ -124,7 +124,7 @@ PROJECTS = [
         'category': 'Blogs',
         'category_slug': 'blogs',
         'image': 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200',
-        'gif': 'project-blog-1.gif',  # Project-specific GIF
+        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
         'description': 'A collection of blogs exploring design thinking, creativity, and the intersection of art and technology.',
         'images': [
             'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200',
