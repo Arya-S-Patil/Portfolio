@@ -33,23 +33,25 @@ python app.py
 
 3. **Open in browser**:
 ```
-http://localhost:5000
+http://localhost:10000
 ```
 
 ## 📁 File Structure
 
 ```
-climbing-portfolio/
+Portfolio/
 ├── app.py                      # Flask application
+├── README.md                   # This file
 ├── requirements.txt            # Python dependencies
 ├── templates/
 │   └── index.html             # Main HTML template
 ├── static/
 │   ├── css/
-│   │   └── style.css          # All styles
+│   │   ├── style.css          # All styles
+│   │   └── style.css.bak      # Backup
 │   ├── js/
 │   │   └── main.js            # All JavaScript
-│   ├── images/
+│   ├── images/                # Hero section images
 │   │   ├── profile.png        # Central image (front)
 │   │   ├── profile-back.png   # Central image (back)
 │   │   ├── sticker1.png       # Sticker 1 (front)
@@ -60,8 +62,6 @@ climbing-portfolio/
 │   │   ├── sticker3-back.png  # Sticker 3 (back)
 │   │   ├── sticker4.png       # Sticker 4 (front)
 │   │   ├── sticker4-back.png  # Sticker 4 (back)
-│   │   ├── logo-back.png      # Logo banner back
-│   │   ├── illustration.png   # About section illustration
 │   │   ├── portrait.gif       # Animated portrait
 │   │   ├── behance-icon.png   # Social icon
 │   │   ├── instagram-icon.png # Social icon
@@ -69,17 +69,34 @@ climbing-portfolio/
 │   │   └── medium-icon.png    # Social icon
 │   └── assets/
 │       ├── loading.gif        # Loading screen animation
-│       ├── decorative.gif     # Projects section decoration
+│       ├── loading2.gif       # Alternative loading
 │       ├── resume.pdf         # Your resume PDF
-│       └── projects/          # Project-specific GIFs
-│           ├── project-pub-1.gif
-│           ├── project-pub-2.gif
-│           ├── project-brand-1.gif
-│           ├── project-brand-2.gif
-│           ├── project-photo-1.gif
-│           ├── project-route-1.gif
-│           ├── project-design-1.gif
-│           └── project-blogs-1.gif
+│       ├── projects/          # Project-specific GIFs
+│       │   ├── project-pub-1.gif
+│       │   ├── project-pub-2.gif
+│       │   ├── project-brand-1.gif
+│       │   ├── project-brand-2.gif
+│       │   ├── project-photo-1.gif
+│       │   ├── project-route-1.gif
+│       │   ├── project-design-1.gif
+│       │   ├── project-blog-1.gif
+│       │   └── Sandy_Loading.gif
+│       ├── pub1/              # Publication project images
+│       │   ├── pub 2.png
+│       │   ├── pub 3.png
+│       │   ├── pub 4.png
+│       │   ├── pub 5.png
+│       │   └── pub 6.png
+│       └── ather/             # Ather x Route Zero images
+│           ├── ather 2.png
+│           ├── ather 3.png
+│           ├── ather 4.png
+│           ├── ather 5.png
+│           ├── ather 6.png
+│           ├── ather 7.png
+│           ├── ather 8.png
+│           ├── ather 9.png
+│           └── ather 10.png
 ```
 
 ## 🎨 Customization Guide
@@ -101,7 +118,7 @@ All demo images are **placeholder images**. Replace them with your actual images
 
 #### GIFs
 - `static/assets/loading.gif` - Loading animation
-- `static/assets/decorative.gif` - Projects section decoration
+- `static/assets/loading2.gif` - Alternative loading animation
 
 #### Social Icons
 - Replace all `*-icon.png` files with actual social media icons (80x80px)
@@ -113,7 +130,7 @@ All demo images are **placeholder images**. Replace them with your actual images
 
 #### Personal Information (templates/index.html)
 
-**About Section** (around line 240):
+**About Section** (lines 245-260):
 ```html
 <p class="about-intro">
     Morning! I'm <strong>YOUR NAME</strong>, an aspiring...
@@ -121,70 +138,81 @@ All demo images are **placeholder images**. Replace them with your actual images
 </p>
 ```
 
-**Poem** (lines 250-268):
+**Poem** (lines 265-276):
 ```html
 <blockquote>
     <!-- Replace with your own poem or remove this section -->
 </blockquote>
 ```
 
-**Contact Info** (lines 320-330):
+**Contact Info** (lines 355-365):
 ```html
-<a href="mailto:YOUR_EMAIL@gmail.com">YOUR_EMAIL@gmail.com</a>
-<a href="tel:+91YOUR_PHONE">+91 YOUR_PHONE</a>
+<a href="mailto:YOUR_EMAIL@gmail.com" class="contact-email">
+    YOUR_EMAIL@gmail.com
+</a>
+
+<a href="tel:+91YOUR_PHONE" class="contact-phone">
+    +91 YOUR_PHONE
+</a>
 ```
 
 #### Projects (app.py)
 
-Edit the `PROJECTS` array (lines 7-115):
+Edit the `PROJECTS` array (lines 7-135):
+
+**Project Data Structure**:
 ```python
-PROJECTS = [
-    {
-        'id': 'your-project-id',
-        'title': 'Your Project Title',
-        'category': 'Your Category',
-        'category_slug': 'category-slug',
-        'image': 'https://your-image-url.com/image.jpg',  # Static thumbnail
-        'gif': 'your-project.gif',  # Animated GIF (plays on scroll)
-        'description': 'Your project description',
-        'images': [
-            'https://image1.jpg',
-            'https://image2.jpg',
-        ]
-    },
-    # Add more projects...
-]
+{
+    'id': 'unique-id',
+    'title': 'Project Title',
+    'category': 'Category Name',
+    'category_slug': 'category-slug',
+    'image': 'https://image-url.jpg',  # Static thumbnail
+    'gif': 'project-name.gif',         # Animated GIF
+    'description': 'Your description',
+    'images': [
+        'static/assets/folder/image1.png',
+        'static/assets/folder/image2.png'
+    ]
+}
 ```
 
-**Important**: Each project needs:
-1. A static `image` (thumbnail shown initially)
-2. A `gif` filename (plays when scrolled into view)
-3. The GIF file should be placed in `static/assets/projects/`
+**Important Project Requirements**:
+- **Static image**: URL or local path shown initially
+- **GIF filename**: Placed in `static/assets/projects/`
+- **Category slug**: Must match a category in `CATEGORIES`
+- **Images array**: Can be URLs or local asset paths
 
 #### Categories
 
-Edit `CATEGORIES` array in app.py (lines 117-125):
+Edit `CATEGORIES` array in app.py (lines 137-145). The structure is:
 ```python
-CATEGORIES = [
-    {'name': 'All', 'slug': 'all'},
-    {'name': 'Your Category 1', 'slug': 'category1'},
-    # Add your categories...
-]
+{'name': 'Display Name', 'slug': 'url-slug'}
 ```
+
+The `slug` must match the `category_slug` used in your projects. Current categories:
+- `publication` - Publication Design
+- `branding` - Branding
+- `photo` - Photo Essay
+- `route` - Ather x Route Zero
+- `design` - 30 Days of Design
+- `blogs` - Blogs
 
 ### 3. Customize Colors
 
-Edit CSS variables in `static/css/style.css` (lines 7-14):
+Edit CSS variables in `static/css/style.css` (lines 10-16):
 ```css
 :root {
-    --neon-green: #B8FF3C;    /* Primary accent color */
-    --dark-bg: #1a1a1a;       /* Medium dark background */
-    --darker-bg: #0f0f0f;     /* Darkest background */
-    --cream: #F5F0E8;         /* Text color */
-    --pink: #D64C7F;          /* Secondary accent */
-    --pink-light: #E57FA0;    /* Light pink variant */
+    --neon-green: #B8FF3C;       /* Primary accent - titles & highlights */
+    --dark-bg: #1a1a1a;          /* Light dark background */
+    --darker-bg: #0f0f0f;        /* Darker background */
+    --cream: #F5F0E8;            /* Text color */
+    --pink: #D64C7F;             /* Secondary accent - banners */
+    --pink-light: #E57FA0;       /* Light pink variant */
 }
 ```
+
+**Background Pattern**: Sections alternate between `--dark-bg` and `--darker-bg` for visual contrast.
 
 ### 4. Fonts
 
@@ -196,69 +224,144 @@ To change fonts, update the Google Fonts link in `templates/index.html` (line 11
 
 ### 5. Social Media Links
 
-Update social media URLs in `templates/index.html` (lines 335-355):
+Update social media URLs in `templates/index.html` (lines 340-360):
 ```html
-<a href="https://behance.net/YOUR_USERNAME" class="social-link" target="_blank">
-<a href="https://instagram.com/YOUR_USERNAME" class="social-link" target="_blank">
-<a href="https://linkedin.com/in/YOUR_USERNAME" class="social-link" target="_blank">
+<a href="https://www.behance.net/YOUR_USERNAME" class="social-link" target="_blank">
+    <img src="{{ url_for('static', filename='images/behance-icon.png') }}" alt="Behance">
+</a>
+
+<a href="https://www.instagram.com/YOUR_USERNAME" class="social-link" target="_blank">
+    <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram">
+</a>
+
+<a href="https://www.linkedin.com/in/YOUR_USERNAME" class="social-link" target="_blank">
+    <img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" alt="LinkedIn">
+</a>
+
 <a href="https://medium.com/@YOUR_USERNAME" class="social-link" target="_blank">
+    <img src="{{ url_for('static', filename='images/medium-icon.png') }}" alt="Medium">
+</a>
 ```
+
+## 🌐 API Endpoints
+
+The Flask app provides JSON APIs for dynamic content:
+
+- **GET** `/` - Main portfolio page
+- **GET** `/api/projects` - All projects as JSON
+- **GET** `/api/projects/<category>` - Projects filtered by category slug
+  - Examples: `/api/projects/publication`, `/api/projects/branding`
+  - Use `all` to get all projects: `/api/projects/all`
+- **POST** `/api/contact` - Contact form submission
+  - Body: `{"name": "", "email": "", "message": ""}`
 
 ## 📱 Responsive Breakpoints
 
-- **Desktop**: Default styles
-- **Tablet**: max-width: 1024px
-- **Mobile Landscape**: max-width: 768px
-- **Mobile Portrait**: max-width: 480px
-- **Small Mobile**: max-width: 360px
+- **Desktop**: 1025px and up (default)
+- **Tablet**: 768px - 1024px
+- **Mobile Landscape**: 481px - 767px  
+- **Mobile Portrait**: 361px - 480px
+- **Small Mobile**: 360px and below
+
+Mobile-specific features:
+- Reduced font sizes for better fit
+- Single-column project grid
+- Adjusted banner padding for text overflow prevention
+- Touch-friendly tap-to-flip interactions
 
 ## 🎯 Key Interactions
 
 ### Flip Cards
-- **Desktop**: Hover to flip
-- **Mobile**: Tap to flip
-- **All**: Click to toggle flip state
+- **Desktop**: Hover to flip stickers and logo
+- **Mobile**: Tap/click to flip
+- **Main Profile**: Always clickable, flips to show back side
 
-### Menu
-- Click menu button to open/close
-- Click menu items to scroll to sections
-- Click outside to close
+### Hero Section
+- **Stickers**: Fly in from center on page load (0.7s animation)
+- **Profile Image**: Appears immediately when page loads
+- **Logo Banner**: Flips to show tagline on hover/tap
 
-### Project Filters
-- Click category to filter projects
-- "All" shows all projects
-- Smooth animations on filter change
+### Menu & Navigation
+- **Menu Button**: Top-left corner with star icon
+- **Menu Items**: Smooth scroll to sections
+- **Close**: Click outside or click another item
 
-### Modals
-- **Resume**: Click "View Resume" button
-- **Project Detail**: Click any project card
-- **Close**: Click X button or press ESC
+### Project Cards
+- **Scroll Trigger**: GIF plays when card scrolled into view
+- **Click**: Opens project detail modal with full gallery
+- **Static Image**: Shows by default, GIF replaces on scroll
+
+### Project Detail Modal
+- **Navigation**: Previous/Next buttons to cycle through projects
+- **Close**: X button or ESC key
+- **Images**: Swipeable on mobile, scrollable on desktop
 
 ## 🛠 Development
 
+### Project Structure
+
+- **Backend**: Flask server (`app.py`) serves HTML template and JSON endpoints
+- **Frontend**: Single-page experience with vanilla JavaScript
+- **Styling**: CSS Grid and Flexbox for responsive layouts
+- **Animations**: CSS keyframes + JavaScript event triggers
+
 ### Adding New Sections
 
-1. Add HTML in `templates/index.html`
-2. Add styles in `static/css/style.css`
-3. Add JavaScript if needed in `static/js/main.js`
-4. Update menu items
+1. Add HTML markup in `templates/index.html`
+2. Add CSS styles in `static/css/style.css`
+3. Add responsive styles at media breakpoints
+4. Add JavaScript interactivity in `static/js/main.js` if needed
+5. Update menu items to link to new sections
 
-### Testing Responsive Design
+### Common Customizations
 
+**Change animation timings** (style.css):
+- Hero animation: Look for `@keyframes sticker*-fly-in`
+- GIF scroll trigger: `js/main.js` - search for `IntersectionObserver`
+
+**Adjust banner responsiveness**: 
+- Check mobile media queries starting at line 1333
+
+**Modify color scheme**:
+- Edit CSS variables in `:root` selector (lines 10-16)
+
+## � Dependencies
+
+- Flask - Web framework
+- Python 3.7+ - Runtime
+
+Install with:
 ```bash
-# Use browser DevTools
-# Chrome: F12 → Toggle Device Toolbar (Ctrl+Shift+M)
-# Test all breakpoints: 360px, 480px, 768px, 1024px, 1440px
+pip install -r requirements.txt
 ```
 
-## 📄 License
+## 🚀 Deployment
 
-This is a custom portfolio template. Feel free to use and modify for your personal portfolio.
+### Local Testing
+```bash
+python app.py
+# Visit: http://localhost:10000
+```
 
-## 🤝 Support
+### Production Deployment
 
-For issues or questions, update the content and images as needed. All demo assets are placeholders and should be replaced with your actual content.
+The app supports environment variables:
+- `PORT` - Server port (default: 10000)
 
----
+Example deployment command:
+```bash
+PORT=8080 python app.py
+```
 
-**Remember**: This template uses demo images and content. Replace everything with your actual portfolio content before deploying!
+### Deploy to Hosting Services
+- **Heroku**: Add Procfile, push to Heroku
+- **Vercel**: Not compatible (Node.js only)
+- **Netlify**: Not compatible (static site only)  
+- **PythonAnywhere**: Upload files, configure WSGI
+- **AWS/GCP/Azure**: Deploy Flask app to compute service
+
+## 📚 Resources
+
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
