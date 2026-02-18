@@ -35,13 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 700);
         
-        // Show profile image after stickers have flown in (~1.4s)
-        setTimeout(() => {
-            const profileImage = document.querySelector('.image-flip');
-            if (profileImage) {
-                profileImage.classList.add('profile-visible');
-            }
-        }, 1400);
+        // Show profile image immediately
+        const profileImage = document.querySelector('.image-flip');
+        if (profileImage) {
+            profileImage.classList.add('profile-visible');
+        }
         
     }, 5000); // Show loading GIF for 5 seconds
 
