@@ -37,6 +37,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 /* ===================================
    LOADING SCREEN - FULLSCREEN
    =================================== */
@@ -648,15 +649,15 @@ body:has(.loading-screen:not(.hidden)) {
 .title-flip {
     width: 100%;
     max-width: 600px;
-    height: 120px;
+    height: clamp(60px, 9vw, 120px);
 }
 
 .title-banner {
     background: var(--pink);
     border-radius: 12px;
-    padding: 1rem 3rem;
+    padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 3rem);
     box-shadow: 0 4px 15px rgba(214, 76, 127, 0.3);
-    min-height: 80px;
+    min-height: clamp(50px, 8vw, 80px);
     width: 100%;
     display: flex;
     align-items: center;
@@ -665,7 +666,7 @@ body:has(.loading-screen:not(.hidden)) {
 
 .section-title {
     font-family: 'Rubik Vinyl', cursive;
-    font-size: 3rem;
+    font-size: clamp(1.4rem, 4.5vw, 3rem);
     color: var(--neon-green);
     margin: 0;
     text-align: center;
@@ -674,7 +675,7 @@ body:has(.loading-screen:not(.hidden)) {
 
 .section-title-back {
     font-family: 'Rubik Vinyl', cursive;
-    font-size: 3rem;
+    font-size: clamp(1.4rem, 4.5vw, 3rem);
     color: var(--neon-green);
     margin: 0;
     text-align: center;
@@ -1289,33 +1290,47 @@ body:has(.loading-screen:not(.hidden)) {
     }
 
     .project-detail {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-        gap: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 0;
+        height: 100vh;
+        height: 100dvh;
     }
     
     .project-detail-left {
+        flex-shrink: 0;
         position: relative;
         height: auto;
         border-right: none;
         border-bottom: 2px solid var(--neon-green);
-        grid-row: 1;
+        padding: 3rem 2rem 1.5rem;
     }
-    
+
     .project-detail-right {
+        flex: 1 1 0;
+        min-height: 0;
         height: auto;
-        max-height: 60vh;
-        grid-row: 2;
+        max-height: none;
+        overflow-y: auto;
+    }
+
+    .project-nav-buttons {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .project-info-title {
+        font-size: 2rem;
+    }
+
+    .project-info-description {
+        font-size: 0.95rem;
     }
 }
 
 /* Mobile Landscape */
 @media (max-width: 768px) {
-    .section-title,
-    .section-title-back {
-        font-size: 2rem;
-    }
-
     .container {
         overflow: visible !important;
     }
@@ -1414,15 +1429,6 @@ body:has(.loading-screen:not(.hidden)) {
         position: absolute;
     }
 
-    .section-title,
-    .section-title-back {
-        font-size: 1.5rem;
-    }
-
-    .title-banner {
-        padding: 0.75rem 2rem;
-    }
-
     .projects-section,
     .about-section,
     .contact-section {
@@ -1495,12 +1501,13 @@ body:has(.loading-screen:not(.hidden)) {
         overflow: hidden;
         padding: 0;
         height: 100vh;
+        height: 100dvh; /* dynamic viewport height — fixes mobile browser chrome */
     }
     
     .project-detail-left {
         flex-shrink: 0;
         background: var(--darker-bg);
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.5rem 1rem;
         border-bottom: 2px solid var(--neon-green);
         z-index: 100;
         height: auto;
@@ -1508,7 +1515,8 @@ body:has(.loading-screen:not(.hidden)) {
     }
     
     .project-detail-right {
-        flex: 1;
+        flex: 1 1 0;
+        min-height: 0; /* critical — allows flex child to shrink below content size */
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -1516,16 +1524,26 @@ body:has(.loading-screen:not(.hidden)) {
         overflow-y: auto;
         background: var(--dark-bg);
     }
+
+    .project-detail-right img {
+        width: 100%;
+        display: block;
+        flex-shrink: 0;
+    }
     
     .project-info-title {
-        font-size: 2rem;
-        margin-bottom: 0.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
     }
     
     .project-info-description {
-        font-size: 1rem;
-        line-height: 1.7;
+        font-size: 0.85rem;
+        line-height: 1.6;
         margin-bottom: 0;
+    }
+
+    .project-info-category {
+        margin-bottom: 0.75rem;
     }
     
     .project-nav-buttons {
@@ -1534,7 +1552,7 @@ body:has(.loading-screen:not(.hidden)) {
     
     .project-nav-buttons-mobile {
         background: var(--darker-bg);
-        padding: 1.5rem;
+        padding: 1rem 1.5rem;
         border-top: 2px solid var(--neon-green);
         display: flex;
         gap: 1rem;
@@ -1553,9 +1571,9 @@ body:has(.loading-screen:not(.hidden)) {
     .close-project {
         top: 1.5rem;
         right: 1.5rem;
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
     }
 }
 
@@ -1565,17 +1583,18 @@ body:has(.loading-screen:not(.hidden)) {
     }
     
     .project-info-title {
-        font-size: 1.7rem;
-        margin-bottom: 0.6rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
     }
     
     .project-info-category {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
     }
     
     .project-info-description {
-        font-size: 0.95rem;
+        font-size: 0.8rem;
+        line-height: 1.55;
     }
     
     .project-nav-buttons {

@@ -8,25 +8,28 @@ PROJECTS = [
     # Publication Design - 2 projects (will display as 1 row x 2 columns)
     {
         'id': 'pub-1',
-        'title': 'Editorial Magazine Design',
+        'title': 'Lenses That Listen',
         'category': 'Publication Design',
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800',
         'gif': 'project-pub-1.gif',  # Project-specific GIF
-        'description': 'A contemporary magazine layout exploring modern typography and grid systems.',
+        'description': 'This coffee table book explore the works of Gauri Gill, one of the most acclaimed contemporary photographers and my personal favourite. Her narratives in itself is awe inspiring in a sense that one can experience visually. This project deepened my understanding of conceptual storytelling and print production, allowing me to merge content, context and design into an immersive visual experience.',
         'images': [
-            'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=1200',
-            'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200',
+            'static/assets/pub1/pub 2.png',
+            'static/assets/pub1/pub 3.png',
+            'static/assets/pub1/pub 4.png',
+            'static/assets/pub1/pub 5.png',
+            'static/assets/pub1/pub 6.png', 
         ]
     },
     {
         'id': 'pub-2',
-        'title': 'Book Cover Series',
+        'title': 'Editorial Magazine Design',
         'category': 'Publication Design',
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800',
         'gif': 'project-pub-2.gif',  # Project-specific GIF
-        'description': 'A series of book covers exploring visual storytelling through minimal design.',
+        'description': 'A contemporary magazine layout exploring modern typography and grid systems.',
         'images': [
             'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200',
             'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=1200',
@@ -84,10 +87,18 @@ PROJECTS = [
         'category_slug': 'route',
         'image': 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200',
         'gif': 'project-route-1.gif',  # Project-specific GIF
-        'description': 'A collaborative project exploring sustainable mobility through design.',
+        'description': 'Based on a brief by Ather Energy for the Kyoorius Young Blood Awards, Route Zero is a youth-led riders club built around the philosophy of zero, zero emissions and zero as a circle.This project was developed in collaboration alongside a friend, with equal credit shared for the concept and execution.',
         'images': [
-            'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200',
-            'https://images.unsplash.com/photo-1485463611174-f302f6a5c1c9?w=1200',
+            'static/assets/ather/ather 2.png',
+            'static/assets/ather/ather 3.png',
+            'static/assets/ather/ather 4.png',
+            'static/assets/ather/ather 5.png',
+            'static/assets/ather/ather 6.png',
+            'static/assets/ather/ather 7.png',
+            'static/assets/ather/ather 8.png',
+            'static/assets/ather/ather 9.png',
+            'static/assets/ather/ather 10.png',
+
         ]
     },
     
