@@ -20,7 +20,8 @@
         <div class="loading-content">
             <img src="{{ url_for('static', filename='assets/loading.gif') }}" 
                  alt="Loading" 
-                 class="loading-gif">
+                 class="loading-gif"
+                 id="loading-gif">
             
         </div>
     </div>
@@ -118,7 +119,7 @@
             </div>
 
             <!-- Logo/Banner -->
-            <div class="flip-card logo-flip">
+            <div class="logo-flip flip-card" id="logo-flip">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="logo-text">CLIMBING.IN</div>
@@ -284,11 +285,10 @@
 
         <!-- Contact Content -->
         <div class="contact-content">
-            
-            <!-- Contact Info -->
+             <!-- Contact Info -->
             <div class="contact-info">
                 <div class="contact-item">
-                    <a href="/cdn-cgi/l/email-protection#86e5eaefebe4efe8e1a8efe8b6b6c6e1ebe7efeaa8e5e9eb" class="contact-email"><span class="__cf_email__" data-cfemail="89eae5e0e4ebe0e7eea7e0e7b9b9c9eee4e8e0e5a7eae6e4">[email&#160;protected]</span></a>
+                    <a href="/cdn-cgi/l/email-protection#23404f4a4e414a4d440d4a4d131363444e424a4f0d404c4e" class="contact-email"><span class="__cf_email__" data-cfemail="53303f3a3e313a3d347d3a3d636313343e323a3f7d303c3e">[email&#160;protected]</span></a>
                 </div>
                 
                 <div class="contact-item">
@@ -298,7 +298,6 @@
                     </a>
                 </div>
             </div>
-
             <!-- Social Media Icons -->
             <div class="social-icons">
                 <a href="https://www.behance.net/palakraka2" class="social-link" target="_blank">
@@ -379,26 +378,7 @@
         </div>
     </div>
 
-    <!-- Resume Modal -->
-    <div class="resume-modal" id="resume-modal">
-        <div class="resume-modal-content">
-            
-            <button class="close-resume" id="close-resume">
-                ✕
-            </button>
-            
-            <a href="{{ url_for('static', filename='assets/resume.pdf') }}" 
-               download="Palak_Resume.pdf" 
-               class="download-resume-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                Download Resume
-            </a>
-            
-            <iframe src="{{ url_for('static', filename='assets/resume.pdf') }}" 
-                    class="resume-iframe"
-                    frameborder="0">
-            </iframe>
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

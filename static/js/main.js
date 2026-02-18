@@ -4,7 +4,7 @@
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     // ===================================
     // LOADING SCREEN
     // ===================================
@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Hiding loading screen');
         if (loadingScreen) {
             loadingScreen.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            loadingScreen.style.display = 'none';
+            document.body.style.overflow = '';
         }
         
         // Trigger sticker fly-in animation
@@ -25,6 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (profileWrapper) {
             profileWrapper.classList.add('hero-animate');
         }
+        
+        // Add "landed" class to stickers after animation completes (0.7s)
+        setTimeout(() => {
+            const stickers = document.querySelectorAll('.sticker');
+            stickers.forEach(sticker => {
+                sticker.classList.add('landed');
+            });
+        }, 700);
         
         // Show profile image after stickers have flown in (~1.4s)
         setTimeout(() => {
@@ -146,26 +155,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Logo: hover flip or tap
-    const logoFlip = document.querySelector('.logo-flip');
+    const logoFlip = document.getElementById('logo-flip');
     if (logoFlip) {
         if (isTouchDevice) {
+            // On touch devices, toggle on tap and auto-flip back after 3 seconds
             logoFlip.addEventListener('click', function(e) {
                 e.preventDefault();
                 this.classList.add('flipped');
-                
-                // Clear any existing timeout
-                if (flipTimeouts.has(this)) {
-                    clearTimeout(flipTimeouts.get(this));
-                }
-                
-                // Set new timeout to flip back
+                if (flipTimeouts.has(this)) clearTimeout(flipTimeouts.get(this));
                 const timeout = setTimeout(() => {
                     this.classList.remove('flipped');
                 }, 3000);
-                
                 flipTimeouts.set(this, timeout);
             });
         } else {
+            // On desktop, hover behavior
             logoFlip.addEventListener('mouseenter', function() {
                 this.classList.add('flipped');
             });
