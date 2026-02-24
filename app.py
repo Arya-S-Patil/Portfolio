@@ -63,22 +63,7 @@ PROJECTS = [
             'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200',
         ]
     },
-    
-    # Photo Essay - Single full-width project
-    {
-        'id': 'photo-1',
-        'title': 'Urban Stories: Delhi Chronicles',
-        'category': 'Photo Essay',
-        'category_slug': 'photo',
-        'image': 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200',
-        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
-        'description': 'A photographic journey through the streets of Delhi, capturing daily life and architecture.',
-        'images': [
-            'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1200',
-            'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200',
-        ]
-    },
-    
+  
     # Ather x Route Zero - Single full-width project
     {
         'id': 'route-1',
@@ -117,30 +102,17 @@ PROJECTS = [
         ]
     },
     
-    # Blogs - Single full-width project
-    {
-        'id': 'blog-1',
-        'title': 'Design & Writing Blog',
-        'category': 'Blogs',
-        'category_slug': 'blogs',
-        'image': 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200',
-        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
-        'description': 'A collection of blogs exploring design thinking, creativity, and the intersection of art and technology.',
-        'images': [
-            'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200',
-            'https://images.unsplash.com/photo-1455849318169-8e84fc2d37f0?w=1200',
-        ]
-    }
+   
 ]
 
 CATEGORIES = [
     {'name': 'All', 'slug': 'all'},
     {'name': 'Publication Design', 'slug': 'publication'},
     {'name': 'Branding', 'slug': 'branding'},
-    {'name': 'Photo Essay', 'slug': 'photo'},
+    
     {'name': 'Ather x Route Zero', 'slug': 'route'},
     {'name': '30 Days of Design', 'slug': 'design'},
-    {'name': 'Blogs', 'slug': 'blogs'}
+   
 ]
 
 @app.route('/')
