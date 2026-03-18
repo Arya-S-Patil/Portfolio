@@ -350,18 +350,56 @@
     <!-- Project Detail Modal -->
     <div class="project-detail" id="project-detail">
         
-        <button class="close-project" id="close-project">
-            ✕
-        </button>
+        <div class="flip-card close-project" id="close-project">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="{{ url_for('static', filename='images/sticker4.png') }}" alt="Close">
+                </div>
+                <div class="flip-card-back">
+                    <img src="{{ url_for('static', filename='images/sticker4-back.png') }}" alt="Close">
+                </div>
+            </div>
+        </div>
         
         <div class="project-detail-left">
             <div class="project-info-category" id="detail-category"></div>
-            <h2 class="project-info-title" id="detail-title"></h2>
+            <div class="flip-card title-flip detail-title-container">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="title-banner">
+                            <h2 class="section-title" id="detail-title-front"></h2>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="title-banner">
+                            <h2 class="section-title-back" id="detail-title-back"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <p class="project-info-description" id="detail-description"></p>
             
             <div class="project-nav-buttons">
-                <button class="nav-btn" id="prev-project">← Previous</button>
-                <button class="nav-btn" id="next-project">Next →</button>
+                <div class="flip-card nav-btn" id="prev-project">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/sticker1.png') }}" alt="Previous">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="{{ url_for('static', filename='images/sticker1-back.png') }}" alt="Previous">
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card nav-btn" id="next-project">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ url_for('static', filename='images/sticker2.png') }}" alt="Next">
+                        </div>
+                        <div class="flip-card-back">
+                            <img src="{{ url_for('static', filename='images/sticker2-back.png') }}" alt="Next">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -370,8 +408,26 @@
         
         <!-- Buttons shown only on mobile at end of scroll -->
         <div class="project-nav-buttons-mobile">
-            <button class="nav-btn" id="prev-project-mobile">← Previous</button>
-            <button class="nav-btn" id="next-project-mobile">Next →</button>
+            <div class="flip-card nav-btn" id="prev-project-mobile">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{ url_for('static', filename='images/sticker1.png') }}" alt="Previous">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/sticker1-back.png') }}" alt="Previous">
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card nav-btn" id="next-project-mobile">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="{{ url_for('static', filename='images/sticker2.png') }}" alt="Next">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="{{ url_for('static', filename='images/sticker2-back.png') }}" alt="Next">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

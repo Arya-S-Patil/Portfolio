@@ -255,7 +255,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectDetail = document.getElementById('project-detail');
     const closeProjectBtn = document.getElementById('close-project');
     const detailCategory = document.getElementById('detail-category');
-    const detailTitle = document.getElementById('detail-title');
+    const detailTitleFront = document.getElementById('detail-title-front');
+    const detailTitleBack = document.getElementById('detail-title-back');
     const detailDescription = document.getElementById('detail-description');
     const detailImages = document.getElementById('detail-images');
     const prevProjectBtn = document.getElementById('prev-project');
@@ -289,7 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Populate project details
         detailCategory.textContent = project.category;
-        detailTitle.textContent = project.title;
+        detailTitleFront.textContent = project.title;
+        detailTitleBack.textContent = project.title;
         detailDescription.textContent = project.description;
 
         // Clear and populate images

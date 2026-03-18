@@ -415,10 +415,7 @@ body:has(.loading-screen:not(.hidden)) {
     z-index: 100;
 }
 
-/* Override the global flip-card hover scale */
-.sticker.flip-card:hover {
-    /* Keep current transform state */
-}
+
 
 /* Profile center Y = sticker-size*0.7 + hero-size/2
    At 45°, sticker top-left corner = profile_center ± (radius*0.72 + sticker/2) in each axis
@@ -1154,21 +1151,13 @@ body:has(.loading-screen:not(.hidden)) {
     position: fixed;
     top: 2rem;
     right: 2rem;
-    background: var(--pink);
-    color: white;
+    width: 60px;
+    height: 60px;
+    background: transparent;
     border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 2rem;
+    padding: 0;
     cursor: pointer;
     z-index: 10000;
-    transition: all 0.3s ease;
-}
-
-.close-project:hover {
-    background: var(--pink-light);
-    transform: scale(1.1);
 }
 
 /* Sticky left panel */
@@ -1182,7 +1171,6 @@ body:has(.loading-screen:not(.hidden)) {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    border-right: 2px solid var(--neon-green);
 }
 
 .project-info-category {
@@ -1194,12 +1182,32 @@ body:has(.loading-screen:not(.hidden)) {
     letter-spacing: 2px;
 }
 
-.project-info-title {
-    font-size: 2.5rem;
-    color: var(--cream);
+.detail-title-container {
     margin-bottom: 2rem;
-    font-weight: 700;
+    height: 140px;
+}
+
+.detail-title-container .section-title,
+.detail-title-container .section-title-back {
+    font-size: 1.8rem;
     line-height: 1.2;
+    white-space: normal;
+}
+
+@media (max-width: 1024px) {
+    .detail-title-container {
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-title-container {
+        height: 100px;
+    }
+    .detail-title-container .section-title,
+    .detail-title-container .section-title-back {
+        font-size: 1.5rem;
+    }
 }
 
 .project-info-description {
@@ -1215,7 +1223,6 @@ body:has(.loading-screen:not(.hidden)) {
     flex-wrap: wrap;
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 2px solid var(--neon-green);
 }
 
 .project-nav-buttons-mobile {
@@ -1224,19 +1231,19 @@ body:has(.loading-screen:not(.hidden)) {
 
 .nav-btn {
     background: transparent;
-    border: 2px solid var(--neon-green);
-    color: var(--cream);
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
+    border: none;
+    padding: 0;
+    width: clamp(60px, 15vw, 100px);
+    height: auto;
+    aspect-ratio: 1;
     cursor: pointer;
-    font-weight: 600;
     transition: all 0.3s ease;
-    font-size: 1rem;
 }
 
-.nav-btn:hover {
-    background: var(--neon-green);
-    color: var(--darker-bg);
+.nav-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Scrollable right panel with NO GAPS */
@@ -1299,7 +1306,6 @@ body:has(.loading-screen:not(.hidden)) {
         position: relative;
         height: auto;
         border-right: none;
-        border-bottom: 2px solid var(--neon-green);
         padding: 3rem 2rem 1.5rem;
     }
 
@@ -1537,7 +1543,6 @@ body:has(.loading-screen:not(.hidden)) {
         flex-shrink: 0;
         background: var(--darker-bg);
         padding: 2rem 1.5rem 1rem;
-        border-bottom: 2px solid var(--neon-green);
         z-index: 100;
         height: auto;
         position: relative;
@@ -1582,7 +1587,6 @@ body:has(.loading-screen:not(.hidden)) {
     .project-nav-buttons-mobile {
         background: var(--darker-bg);
         padding: 1rem 1.5rem;
-        border-top: 2px solid var(--neon-green);
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
