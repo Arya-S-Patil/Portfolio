@@ -47,17 +47,9 @@
             <div class="profile-stickers-wrapper">
                 
                 <!-- Central Image -->
-                <div class="flip-card image-flip">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="{{ url_for('static', filename='images/profile.png') }}" 
-                                 alt="Profile">
-                        </div>
-                        <div class="flip-card-back">
-                            <img src="{{ url_for('static', filename='images/profile-back.png') }}" 
-                                 alt="Profile Back">
-                        </div>
-                    </div>
+                <div class="image-flip">
+                    <img src="{{ url_for('static', filename='images/profile.png') }}" 
+                         alt="Profile">
                 </div>
 
                 <!-- Sticker 1 - Top Left -->

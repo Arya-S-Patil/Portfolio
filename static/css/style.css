@@ -376,20 +376,14 @@ body:has(.loading-screen:not(.hidden)) {
     transform-origin: center center;
 }
 
-/* Override hover scale for central image */
-.image-flip.flip-card:hover {
-    transform: translateX(-50%);
-}
-
-.image-flip .flip-card-front,
-.image-flip .flip-card-back {
+/* Styling for stationary profile image */
+.image-flip {
     border-radius: 50%;
     overflow: hidden;
     background: white;
 }
 
-.image-flip .flip-card-front img,
-.image-flip .flip-card-back img {
+.image-flip img {
     width: 100%;
     height: 100%;
     object-fit: cover;

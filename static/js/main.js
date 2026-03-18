@@ -121,37 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Profile image: hover flip or tap
-    const profileImage = document.querySelector('.image-flip');
-    if (profileImage) {
-        if (isTouchDevice) {
-            profileImage.addEventListener('click', function(e) {
-                e.preventDefault();
-                this.classList.add('flipped');
-                
-                // Clear any existing timeout
-                if (flipTimeouts.has(this)) {
-                    clearTimeout(flipTimeouts.get(this));
-                }
-                
-                // Set new timeout to flip back
-                const timeout = setTimeout(() => {
-                    this.classList.remove('flipped');
-                }, 3000);
-                
-                flipTimeouts.set(this, timeout);
-            });
-        } else {
-            profileImage.addEventListener('mouseenter', function() {
-                this.classList.add('flipped');
-            });
-            
-            profileImage.addEventListener('mouseleave', function() {
-                this.classList.remove('flipped');
-            });
-        }
-    }
-    
     // Logo: hover flip or tap
     const logoFlip = document.getElementById('logo-flip');
     if (logoFlip) {
