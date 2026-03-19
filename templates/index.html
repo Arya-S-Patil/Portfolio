@@ -350,15 +350,8 @@
     <!-- Project Detail Modal -->
     <div class="project-detail" id="project-detail">
         
-        <div class="flip-card close-project" id="close-project">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="{{ url_for('static', filename='images/sticker4.png') }}" alt="Close">
-                </div>
-                <div class="flip-card-back">
-                    <img src="{{ url_for('static', filename='images/sticker4-back.png') }}" alt="Close">
-                </div>
-            </div>
+        <div class="close-project" id="close-project">
+            <img src="{{ url_for('static', filename='images/sticker4.png') }}" alt="Close">
         </div>
         
         <div class="project-detail-left">
@@ -380,25 +373,11 @@
             <p class="project-info-description" id="detail-description"></p>
             
             <div class="project-nav-buttons">
-                <div class="flip-card nav-btn" id="prev-project">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="{{ url_for('static', filename='images/sticker1.png') }}" alt="Previous">
-                        </div>
-                        <div class="flip-card-back">
-                            <img src="{{ url_for('static', filename='images/sticker1-back.png') }}" alt="Previous">
-                        </div>
-                    </div>
+                <div class="nav-btn" id="prev-project">
+                    <img src="{{ url_for('static', filename='images/sticker1.png') }}" alt="Previous">
                 </div>
-                <div class="flip-card nav-btn" id="next-project">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="{{ url_for('static', filename='images/sticker2.png') }}" alt="Next">
-                        </div>
-                        <div class="flip-card-back">
-                            <img src="{{ url_for('static', filename='images/sticker2-back.png') }}" alt="Next">
-                        </div>
-                    </div>
+                <div class="nav-btn" id="next-project">
+                    <img src="{{ url_for('static', filename='images/sticker2.png') }}" alt="Next">
                 </div>
             </div>
         </div>
@@ -408,25 +387,11 @@
         
         <!-- Buttons shown only on mobile at end of scroll -->
         <div class="project-nav-buttons-mobile">
-            <div class="flip-card nav-btn" id="prev-project-mobile">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ url_for('static', filename='images/sticker1.png') }}" alt="Previous">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="{{ url_for('static', filename='images/sticker1-back.png') }}" alt="Previous">
-                    </div>
-                </div>
+            <div class="nav-btn" id="prev-project-mobile">
+                <img src="{{ url_for('static', filename='images/sticker1.png') }}" alt="Previous">
             </div>
-            <div class="flip-card nav-btn" id="next-project-mobile">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="{{ url_for('static', filename='images/sticker2.png') }}" alt="Next">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="{{ url_for('static', filename='images/sticker2-back.png') }}" alt="Next">
-                    </div>
-                </div>
+            <div class="nav-btn" id="next-project-mobile">
+                <img src="{{ url_for('static', filename='images/sticker2.png') }}" alt="Next">
             </div>
         </div>
     </div>
