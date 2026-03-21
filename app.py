@@ -28,7 +28,7 @@ PROJECTS = [
         'category': 'Publication Design',
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800',
-        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
+        'gif': 'Artist way zine .gif',  # Project-specific GIF
         'description': 'A contemporary magazine layout exploring modern typography and grid systems.',
         'images': [
             'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200',
@@ -39,28 +39,27 @@ PROJECTS = [
     # Branding - 2 projects (will display as 1 row x 2 columns)
     {
         'id': 'brand-1',
-        'title': 'Cafe Branding Identity',
+        'title': 'Breakvox',
         'category': 'Branding',
         'category_slug': 'branding',
         'image': 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800',
         'gif': 'project-brand-1.gif',  # Project-specific GIF
         'description': 'Complete brand identity for a sustainable coffee shop including logo, packaging, and collateral.',
         'images': [
-            'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200',
-            'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200',
-        ]
-    },
-    {
-        'id': 'brand-2',
-        'title': 'Tech Startup Brand',
-        'category': 'Branding',
-        'category_slug': 'branding',
-        'image': 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
-        'gif': 'Sandy_Loading.gif',  # Project-specific GIF
-        'description': 'Modern brand identity for an AI-focused tech startup with a bold visual language.',
-        'images': [
-            'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1200',
-            'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200',
+            'static/assets/Beakvox branding project/b1.gif',
+            'static/assets/Beakvox branding project/b2.png',
+            'static/assets/Beakvox branding project/b3.png',
+            'static/assets/Beakvox branding project/b4.png',
+            'static/assets/Beakvox branding project/b5.png',
+            'static/assets/Beakvox branding project/b6.png',
+            'static/assets/Beakvox branding project/b7.png',
+            'static/assets/Beakvox branding project/b8.png',
+            'static/assets/Beakvox branding project/b9.png',
+            'static/assets/Beakvox branding project/b10.png',
+            'static/assets/Beakvox branding project/b11.png',
+            'static/assets/Beakvox branding project/b12.png',
+            'static/assets/Beakvox branding project/b13.png',
+
         ]
     },
   
