@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLIMBING.IN - Portfolio</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik+Vinyl&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.2">
 </head>
+
 <body>
 
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
         <div class="loading-content">
-            <img src="{{ url_for('static', filename='assets/loading.gif') }}" 
-                 alt="Loading" 
-                 class="loading-gif"
-                 id="loading-gif">
-            
+            <img src="{{ url_for('static', filename='assets/loading.gif') }}" alt="Loading" class="loading-gif"
+                id="loading-gif">
+
         </div>
     </div>
 
@@ -42,26 +44,24 @@
     <!-- Hero Section -->
     <section class="hero-sticker-section" id="hero">
         <div class="container">
-            
+
             <!-- Profile and Stickers Container -->
             <div class="profile-stickers-wrapper">
-                
+
                 <!-- Central Image -->
                 <div class="image-flip">
-                    <img src="{{ url_for('static', filename='images/profile.png') }}" 
-                         alt="Profile">
+                    <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile">
                 </div>
 
                 <!-- Sticker 1 - Top Left -->
                 <div class="flip-card sticker sticker-1">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="{{ url_for('static', filename='images/sticker1.png') }}" 
-                                 alt="Sticker 1">
+                            <img src="{{ url_for('static', filename='images/sticker1.png') }}" alt="Sticker 1">
                         </div>
                         <div class="flip-card-back">
-                            <img src="{{ url_for('static', filename='images/sticker1-back.png') }}" 
-                                 alt="Sticker 1 Back">
+                            <img src="{{ url_for('static', filename='images/sticker1-back.png') }}"
+                                alt="Sticker 1 Back">
                         </div>
                     </div>
                 </div>
@@ -70,12 +70,11 @@
                 <div class="flip-card sticker sticker-2">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="{{ url_for('static', filename='images/sticker2.png') }}" 
-                                 alt="Sticker 2">
+                            <img src="{{ url_for('static', filename='images/sticker2.png') }}" alt="Sticker 2">
                         </div>
                         <div class="flip-card-back">
-                            <img src="{{ url_for('static', filename='images/sticker2-back.png') }}" 
-                                 alt="Sticker 2 Back">
+                            <img src="{{ url_for('static', filename='images/sticker2-back.png') }}"
+                                alt="Sticker 2 Back">
                         </div>
                     </div>
                 </div>
@@ -84,12 +83,11 @@
                 <div class="flip-card sticker sticker-3">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="{{ url_for('static', filename='images/sticker3.png') }}" 
-                                 alt="Sticker 3">
+                            <img src="{{ url_for('static', filename='images/sticker3.png') }}" alt="Sticker 3">
                         </div>
                         <div class="flip-card-back">
-                            <img src="{{ url_for('static', filename='images/sticker3-back.png') }}" 
-                                 alt="Sticker 3 Back">
+                            <img src="{{ url_for('static', filename='images/sticker3-back.png') }}"
+                                alt="Sticker 3 Back">
                         </div>
                     </div>
                 </div>
@@ -98,16 +96,15 @@
                 <div class="flip-card sticker sticker-4">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="{{ url_for('static', filename='images/sticker4.png') }}" 
-                                 alt="Sticker 4">
+                            <img src="{{ url_for('static', filename='images/sticker4.png') }}" alt="Sticker 4">
                         </div>
                         <div class="flip-card-back">
-                            <img src="{{ url_for('static', filename='images/sticker4-back.png') }}" 
-                                 alt="Sticker 4 Back">
+                            <img src="{{ url_for('static', filename='images/sticker4-back.png') }}"
+                                alt="Sticker 4 Back">
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <!-- Logo/Banner -->
@@ -117,7 +114,8 @@
                         <div class="logo-text">CLIMBING.IN</div>
                     </div>
                     <div class="flip-card-back">
-                        <p class="logo-back-text">The moniker <strong>"climbing in"</strong> marks my beginning of my process that <strong>starts from within</strong>.</p>
+                        <p class="logo-back-text">The moniker <strong>"climbing in"</strong> marks my beginning of my
+                            process that <strong>starts from within</strong>.</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +124,7 @@
 
     <!-- Projects Section -->
     <section class="projects-section" id="projects">
-        
+
         <!-- Section Title -->
         <div class="section-header">
             <div class="flip-card title-flip">
@@ -148,8 +146,8 @@
         <!-- Category Filters -->
         <div class="category-filters">
             {% for category in categories %}
-            <button class="filter-btn {% if category.slug == 'all' %}active{% endif %}" 
-                    data-category="{{ category.slug }}">
+            <button class="filter-btn {% if category.slug == 'all' %}active{% endif %}"
+                data-category="{{ category.slug }}">
                 <span class="filter-icon">★</span>
                 <span class="filter-text">{{ category.name }}</span>
             </button>
@@ -159,25 +157,18 @@
         <!-- Projects Grid -->
         <div class="projects-grid" id="projects-grid">
             {% for project in projects %}
-            <div class="project-card" 
-                 data-category="{{ project.category_slug }}"
-                 data-project-id="{{ project.id }}"
-                 data-scroll-animate>
-                
+            <div class="project-card" data-category="{{ project.category_slug }}" data-project-id="{{ project.id }}"
+                data-scroll-animate>
+
                 <div class="project-image">
                     <!-- Static image (default) -->
-                    <img src="{{ project.image }}" 
-                         alt="{{ project.title }}"
-                         class="project-static-img"
-                         loading="lazy">
-                    
+                    <img src="{{ project.image }}" alt="{{ project.title }}" class="project-static-img" loading="lazy">
+
                     <!-- GIF (plays on scroll) -->
-                    <img src="{{ url_for('static', filename='assets/projects/' + project.gif) }}" 
-                         alt="{{ project.title }} animation"
-                         class="project-gif-img"
-                         loading="lazy">
+                    <img src="{{ url_for('static', filename='assets/projects/' + project.gif) }}"
+                        alt="{{ project.title }} animation" class="project-gif-img" loading="lazy">
                 </div>
-                
+
                 <div class="project-info">
                     <h3 class="project-title">{{ project.title }}</h3>
                     <p class="project-category">{{ project.category }}</p>
@@ -189,7 +180,7 @@
 
     <!-- About Section -->
     <section class="about-section" id="about">
-        
+
         <!-- Section Title -->
         <div class="section-header">
             <div class="flip-card title-flip">
@@ -212,11 +203,11 @@
         <div class="about-content-wrapper">
             <div class="about-text-section">
                 <p class="about-intro">
-                    Morning! I'm PALAK, an aspiring communication designer / writer / 
-                    photographer / researcher / scribbler / freedom and hard work enjoyer. Based in 
+                    Morning! I'm PALAK, an aspiring communication designer / writer /
+                    photographer / researcher / scribbler / freedom and hard work enjoyer. Based in
                     India, drawn to the power of art and design as a tool for exploration and storytelling.
                 </p>
-                
+
                 <div class="about-poem-portrait-row">
                     <div class="about-poem">
                         <p class="poem-intro">Here's small poem to best describe myself-</p>
@@ -237,14 +228,13 @@
                             <p><em>As much as I shape it.</em></p>
                         </blockquote>
                     </div>
-                    
+
                     <div class="about-portrait-container">
-                        <img src="{{ url_for('static', filename='images/portrait.gif') }}" 
-                             alt="Portrait GIF"
-                             class="portrait-gif">
+                        <img src="{{ url_for('static', filename='images/portrait.gif') }}" alt="Portrait GIF"
+                            class="portrait-gif">
                     </div>
                 </div>
-                
+
                 <button class="view-resume-btn" id="view-resume-btn">
                     View Resume
                 </button>
@@ -256,7 +246,7 @@
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
-        
+
         <!-- Section Title -->
         <div class="section-header">
             <div class="flip-card title-flip">
@@ -277,17 +267,17 @@
 
         <!-- Contact Content -->
         <div class="contact-content">
-             <!-- Contact Info -->
+            <!-- Contact Info -->
             <div class="contact-info">
                 <div class="contact-info">
-            <div class="contact-item">
-                <a href="mailto:Climbing.in00@gmail.com" class="contact-email">
-                    Climbing.in00@gmail.com
-                </a>
-            </div>
-            </div>
+                    <div class="contact-item">
+                        <a href="mailto:Climbing.in00@gmail.com" class="contact-email">
+                            Climbing.in00@gmail.com
+                        </a>
+                    </div>
+                </div>
 
-                
+
                 <div class="contact-item">
                     <span class="green-star">✱</span>
                     <a href="tel:+917796479883" class="contact-phone">
@@ -298,24 +288,21 @@
             <!-- Social Media Icons -->
             <div class="social-icons">
                 <a href="https://www.behance.net/palakraka2" class="social-link" target="_blank">
-                    <img src="{{ url_for('static', filename='images/behance-icon.png') }}" 
-                         alt="Behance"
-                         class="social-icon">
+                    <img src="{{ url_for('static', filename='images/behance-icon.png') }}" alt="Behance"
+                        class="social-icon">
                 </a>
-                <a href="https://www.instagram.com/climbing.in?igsh=dTR2cXZwNG50ZmVp&utm_source=qr" class="social-link" target="_blank">
-                    <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" 
-                         alt="Instagram"
-                         class="social-icon">
+                <a href="https://www.instagram.com/climbing.in?igsh=dTR2cXZwNG50ZmVp&utm_source=qr" class="social-link"
+                    target="_blank">
+                    <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram"
+                        class="social-icon">
                 </a>
                 <a href="https://www.linkedin.com/in/palak-raka-467ba132b/" class="social-link" target="_blank">
-                    <img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" 
-                         alt="LinkedIn"
-                         class="social-icon">
+                    <img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" alt="LinkedIn"
+                        class="social-icon">
                 </a>
                 <a href="https://medium.com/@palakpraka" class="social-link" target="_blank">
-                    <img src="{{ url_for('static', filename='images/medium-icon.png') }}" 
-                         alt="Medium"
-                         class="social-icon">
+                    <img src="{{ url_for('static', filename='images/medium-icon.png') }}" alt="Medium"
+                        class="social-icon">
                 </a>
             </div>
         </div>
@@ -324,14 +311,13 @@
     <!-- Resume Modal -->
     <div class="resume-modal" id="resume-modal">
         <div class="resume-modal-content">
-            
+
             <button class="close-resume" id="close-resume">
                 ✕
             </button>
-            
-            <a href="{{ url_for('static', filename='assets/resume.pdf') }}" 
-               download="Palak_Resume.pdf" 
-               class="download-resume-btn">
+
+            <a href="{{ url_for('static', filename='assets/resume.pdf') }}" download="Palak_Resume.pdf"
+                class="download-resume-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
@@ -339,21 +325,19 @@
                 </svg>
                 Download Resume
             </a>
-            
-            <iframe src="{{ url_for('static', filename='assets/resume.pdf') }}" 
-                    class="resume-iframe"
-                    frameborder="0">
+
+            <iframe src="{{ url_for('static', filename='assets/resume.pdf') }}" class="resume-iframe" frameborder="0">
             </iframe>
         </div>
     </div>
 
     <!-- Project Detail Modal -->
     <div class="project-detail" id="project-detail">
-        
+
         <div class="close-project" id="close-project">
-            <img src="{{ url_for('static', filename='images/sticker4.png') }}" alt="Close">
+            <img src="{{ url_for('static', filename='images/Cross.png') }}" alt="Close">
         </div>
-        
+
         <div class="project-detail-left">
             <div class="project-info-category" id="detail-category"></div>
             <div class="flip-card title-flip detail-title-container">
@@ -371,24 +355,24 @@
                 </div>
             </div>
             <p class="project-info-description" id="detail-description"></p>
-            
+
             <div class="project-nav-buttons">
                 <div class="nav-btn" id="prev-project">
-                    <img src="{{ url_for('static', filename='images/previous.png') }}" alt="Previous">
+                    <img src="{{ url_for('static', filename='images/Back.png') }}" alt="Previous">
                 </div>
                 <div class="nav-btn" id="next-project">
                     <img src="{{ url_for('static', filename='images/next.png') }}" alt="Next">
                 </div>
             </div>
         </div>
-        
+
         <div class="project-detail-right" id="detail-images">
         </div>
-        
+
         <!-- Buttons shown only on mobile at end of scroll -->
         <div class="project-nav-buttons-mobile">
             <div class="nav-btn" id="prev-project-mobile">
-                <img src="{{ url_for('static', filename='images/previous.png') }}" alt="Previous">
+                <img src="{{ url_for('static', filename='images/Back.png') }}" alt="Previous">
             </div>
             <div class="nav-btn" id="next-project-mobile">
                 <img src="{{ url_for('static', filename='images/next.png') }}" alt="Next">
@@ -399,4 +383,5 @@
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
+
 </html>
