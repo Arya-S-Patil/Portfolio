@@ -272,7 +272,22 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             projects = data;
+            
+            // Preload all project images in the background during the 5s loading screen
+            preloadProjectImages(projects);
         });
+
+    // Preloads images so they show up instantly when a project is clicked
+    function preloadProjectImages(projectsData) {
+        projectsData.forEach(project => {
+            if (project.images && Array.isArray(project.images)) {
+                project.images.forEach(imageUrl => {
+                    const img = new Image();
+                    img.src = imageUrl;
+                });
+            }
+        });
+    }
 
     // Open project detail
     allProjectCards.forEach(card => {
