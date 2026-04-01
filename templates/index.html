@@ -162,11 +162,11 @@
 
                 <div class="project-image">
                     <!-- Static image (default) -->
-                    <img src="{{ project.image }}" alt="{{ project.title }}" class="project-static-img" loading="lazy">
+                    <img src="{{ project.image }}" alt="{{ project.title }}" class="project-static-img">
 
                     <!-- GIF (plays on scroll) -->
                     <img src="{{ url_for('static', filename='assets/projects/' + project.gif) }}"
-                        alt="{{ project.title }} animation" class="project-gif-img" loading="lazy">
+                        alt="{{ project.title }} animation" class="project-gif-img">
                 </div>
 
                 <div class="project-info">

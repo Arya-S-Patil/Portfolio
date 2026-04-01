@@ -277,14 +277,31 @@ document.addEventListener('DOMContentLoaded', function() {
             preloadProjectImages(projects);
         });
 
+    // Global array to prevent garbage collection of preloaded images
+    window._preloadedImages = [];
+
     // Preloads images so they show up instantly when a project is clicked
     function preloadProjectImages(projectsData) {
         projectsData.forEach(project => {
+            // Preload detail window images
             if (project.images && Array.isArray(project.images)) {
                 project.images.forEach(imageUrl => {
                     const img = new Image();
-                    img.src = imageUrl;
+                    img.src = imageUrl.startsWith('http') ? imageUrl : ('/' + imageUrl);
+                    window._preloadedImages.push(img);
                 });
+            }
+            // Preload main static image
+            if (project.image) {
+                const img = new Image();
+                img.src = project.image.startsWith('http') ? project.image : ('/' + project.image);
+                window._preloadedImages.push(img);
+            }
+            // Preload gif
+            if (project.gif) {
+                const img = new Image();
+                img.src = '/static/assets/projects/' + project.gif;
+                window._preloadedImages.push(img);
             }
         });
     }
@@ -313,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
         detailImages.innerHTML = '';
         project.images.forEach(imageUrl => {
             const img = document.createElement('img');
-            img.src = imageUrl;
+            img.src = imageUrl.startsWith('http') ? imageUrl : ('/' + imageUrl);
             img.alt = project.title;
             detailImages.appendChild(img);
         });
