@@ -314,9 +314,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function openProjectDetail(projectId) {
+    function openProjectDetail(projectId, isHistoryAction = false) {
         const project = projects.find(p => p.id === projectId);
         if (!project) return;
+        
+        // Handle history state - push state only when opening the modal from outside
+        if (!projectDetail.classList.contains('active') && !isHistoryAction) {
+            history.pushState({ modal: 'projectDetail' }, '', window.location.href);
+        }
 
         currentProjectIndex = projects.indexOf(project);
 
@@ -335,18 +340,35 @@ document.addEventListener('DOMContentLoaded', function() {
             detailImages.appendChild(img);
         });
 
+        // Scroll back to top
+        if (detailImages) {
+            detailImages.scrollTop = 0;
+        }
+
         // Show modal
         projectDetail.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
     // Close project detail
-    closeProjectBtn.addEventListener('click', closeProjectDetail);
+    closeProjectBtn.addEventListener('click', () => closeProjectDetail(false));
 
-    function closeProjectDetail() {
+    function closeProjectDetail(isHistoryPop = false) {
+        const wasActive = projectDetail.classList.contains('active');
         projectDetail.classList.remove('active');
         document.body.style.overflow = '';
+        
+        if (wasActive && !isHistoryPop) {
+            history.back();
+        }
     }
+
+    // Handle back button / gesture
+    window.addEventListener('popstate', function(e) {
+        if (projectDetail.classList.contains('active')) {
+            closeProjectDetail(true);
+        }
+    });
 
     // Previous project
     prevProjectBtn.addEventListener('click', function() {
@@ -383,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close on ESC key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && projectDetail.classList.contains('active')) {
-            closeProjectDetail();
+            closeProjectDetail(false);
         }
     });
 

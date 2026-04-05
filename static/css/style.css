@@ -1264,6 +1264,24 @@ body:has(.loading-screen:not(.hidden)) {
     grid-column: 2;
     grid-row: 1;
     background: var(--dark-bg);
+
+    /* Explicit scrollbar styles for cross-browser and mobile visibility */
+    scrollbar-width: thin;
+    scrollbar-color: var(--neon-green) transparent;
+}
+
+/* WebKit specific scrollbar to ensure visibility on iOS/Android */
+.project-detail-right::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+.project-detail-right::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 10px;
+}
+.project-detail-right::-webkit-scrollbar-thumb {
+    background-color: var(--neon-green);
+    border-radius: 10px;
 }
 
 .project-detail-right img {

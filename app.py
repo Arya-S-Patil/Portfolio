@@ -31,8 +31,22 @@ PROJECTS = [
         'gif': 'Artist way zine .gif',  # Project-specific GIF
         'description': 'A contemporary magazine layout exploring modern typography and grid systems.',
         'images': [
-            'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200',
-            'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=1200',
+            'static/assets/Artist way zine/1.png',
+            'static/assets/Artist way zine/2.png',
+            'static/assets/Artist way zine/3.png',
+            'static/assets/Artist way zine/4.png',
+            'static/assets/Artist way zine/5.png',
+            'static/assets/Artist way zine/6.png',
+            'static/assets/Artist way zine/7.png',
+            'static/assets/Artist way zine/8.png',
+            'static/assets/Artist way zine/9.png',
+            'static/assets/Artist way zine/10.png',
+            'static/assets/Artist way zine/11.png',
+            'static/assets/Artist way zine/12.png',
+            'static/assets/Artist way zine/13.png',
+            'static/assets/Artist way zine/14.png',
+            'static/assets/Artist way zine/15.png',
+            'static/assets/Artist way zine/16.png'
         ]
     },
     
