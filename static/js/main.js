@@ -206,10 +206,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.classList.add('in-view');
                 }
                 
-                // Tease animation for Section Headers when they scroll into view
-                if (entry.target.classList.contains('title-flip')) {
+                // Tease animation for any flip-capable element when it scrolls into view
+                if (entry.target.classList.contains('flip-card') || entry.target.id === 'logo-flip' || entry.target.classList.contains('sticker')) {
                     playTeaseAnimation(entry.target);
-                    scrollObserver.unobserve(entry.target);
+                    // intentionally not unobserving so it wiggles EVERY time it's seen
                 }
             }
         });
@@ -221,10 +221,10 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollObserver.observe(card);
     });
 
-    // Observe section titles for tease animation
-    const titleFlips = document.querySelectorAll('.section-header .title-flip');
-    titleFlips.forEach(title => {
-        scrollObserver.observe(title);
+    // Observe all flippable elements for tease animation
+    const allFlippables = document.querySelectorAll('.flip-card, #logo-flip, .sticker');
+    allFlippables.forEach(flippable => {
+        scrollObserver.observe(flippable);
     });
 
     // ===================================
