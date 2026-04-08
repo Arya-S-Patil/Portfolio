@@ -1168,7 +1168,7 @@ body:has(.loading-screen:not(.hidden)) {
 
 /* Sticky left panel */
 .project-detail-left {
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     background: var(--darker-bg);
     grid-column: 1;
     grid-row: 1 / 3;
@@ -1177,15 +1177,6 @@ body:has(.loading-screen:not(.hidden)) {
     height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.project-info-category {
-    color: var(--neon-green);
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .detail-title-container {
@@ -1332,7 +1323,7 @@ body:has(.loading-screen:not(.hidden)) {
         position: relative;
         height: auto;
         border-right: none;
-        padding: 3rem 2rem 1.5rem;
+        padding: 1.5rem 2rem 1.5rem;
     }
 
     .project-detail-right {
@@ -1569,7 +1560,7 @@ body:has(.loading-screen:not(.hidden)) {
     .project-detail-left {
         flex-shrink: 0;
         background: var(--darker-bg);
-        padding: 2rem 1.5rem 1rem;
+        padding: 1.5rem 1.5rem 1rem;
         z-index: 100;
         height: auto;
         position: relative;

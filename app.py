@@ -13,6 +13,7 @@ PROJECTS = [
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800',
         'gif': 'project-pub-1.gif',  # Project-specific GIF
+        'flip_text': 'Text for flip side here',
         'description': 'This coffee table book explore the works of Gauri Gill, one of the most acclaimed contemporary photographers and my personal favourite. Her narratives in itself is awe inspiring in a sense that one can experience visually. This project deepened my understanding of conceptual storytelling and print production, allowing me to merge content, context and design into an immersive visual experience.',
         'images': [
             'static/assets/pub1/pub 2.png',
@@ -29,6 +30,7 @@ PROJECTS = [
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800',
         'gif': 'Artist way zine .gif',  # Project-specific GIF
+        'flip_text': 'Text for flip side here',
         'description': 'A contemporary magazine layout exploring modern typography and grid systems.',
         'images': [
             'static/assets/Artist way zine/1.png',
@@ -58,6 +60,7 @@ PROJECTS = [
         'category_slug': 'branding',
         'image': 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800',
         'gif': 'project-brand-1.gif',  # Project-specific GIF
+        'flip_text': 'Text for flip side here',
         'description': 'Complete brand identity for a sustainable coffee shop including logo, packaging, and collateral.',
         'images': [
             'static/assets/Beakvox branding project/b1.gif',
@@ -85,6 +88,7 @@ PROJECTS = [
         'category_slug': 'route',
         'image': 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200',
         'gif': 'project-route-1.gif',  # Project-specific GIF
+        'flip_text': 'Text for flip side here',
         'description': 'Based on a brief by Ather Energy for the Kyoorius Young Blood Awards, Route Zero is a youth-led riders club built around the philosophy of zero, zero emissions and zero as a circle.This project was developed in collaboration alongside a friend, with equal credit shared for the concept and execution.',
         'images': [
             'static/assets/ather/ather 2.png',
@@ -108,6 +112,7 @@ PROJECTS = [
         'category_slug': 'design',
         'image': 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200',
         'gif': 'project-design-1.gif',  # Project-specific GIF
+        'flip_text': 'Text for flip side here',
         'description': 'A month-long daily design challenge exploring different creative disciplines.',
         'images': [
             'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200',
