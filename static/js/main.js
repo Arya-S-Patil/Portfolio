@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
             stickers.forEach(sticker => {
                 sticker.classList.add('landed');
             });
+
+            // Trigger tease animation on hero elements shortly after landing
+            setTimeout(() => {
+                const heroFlips = document.querySelectorAll('.hero-animate .sticker, #logo-flip');
+                heroFlips.forEach(card => playTeaseAnimation(card));
+            }, 800);
         }, 700);
         
         // Show profile image immediately
@@ -199,6 +205,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (entry.target.classList.contains('project-card')) {
                     entry.target.classList.add('in-view');
                 }
+                
+                // Tease animation for Section Headers when they scroll into view
+                if (entry.target.classList.contains('title-flip')) {
+                    playTeaseAnimation(entry.target);
+                    scrollObserver.unobserve(entry.target);
+                }
             }
         });
     }, observerOptions);
@@ -207,6 +219,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('[data-scroll-animate]');
     projectCards.forEach(card => {
         scrollObserver.observe(card);
+    });
+
+    // Observe section titles for tease animation
+    const titleFlips = document.querySelectorAll('.section-header .title-flip');
+    titleFlips.forEach(title => {
+        scrollObserver.observe(title);
     });
 
     // ===================================
@@ -346,6 +364,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show modal
         projectDetail.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Trigger tease on the detail header after modal shows
+        setTimeout(() => {
+            const detailTitleFlip = document.querySelector('.project-detail-left .title-flip');
+            if (detailTitleFlip) playTeaseAnimation(detailTitleFlip);
+        }, 300);
     }
 
     // Close project detail
@@ -476,6 +500,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     // UTILITY FUNCTIONS
     // ===================================
+    
+    function playTeaseAnimation(element) {
+        if (!element || element.classList.contains('tease')) return;
+        element.classList.add('tease');
+        setTimeout(() => {
+            element.classList.remove('tease');
+        }, 800); // Matches the 0.8s CSS animation duration
+    }
     
     console.log('CLIMBING.IN Portfolio loaded successfully!');
 });

@@ -246,6 +246,47 @@ body:has(.loading-screen:not(.hidden)) {
     75% { transform: rotate(12.5deg) scale(1.15); }
 }
 
+/* Tease Animations - triggered on visibility/opening */
+@keyframes flip-tease {
+    0% { transform: rotateY(0deg); }
+    30% { transform: rotateY(25deg); }
+    60% { transform: rotateY(-10deg); }
+    100% { transform: rotateY(0deg); }
+}
+@keyframes flip-tease-1 {
+    0% { transform: rotate(-15deg) rotateY(0deg); }
+    30% { transform: rotate(-15deg) rotateY(25deg); }
+    60% { transform: rotate(-15deg) rotateY(-10deg); }
+    100% { transform: rotate(-15deg) rotateY(0deg); }
+}
+@keyframes flip-tease-2 {
+    0% { transform: rotate(8deg) rotateY(0deg); }
+    30% { transform: rotate(8deg) rotateY(25deg); }
+    60% { transform: rotate(8deg) rotateY(-10deg); }
+    100% { transform: rotate(8deg) rotateY(0deg); }
+}
+@keyframes flip-tease-3 {
+    0% { transform: rotate(-5deg) rotateY(0deg); }
+    30% { transform: rotate(-5deg) rotateY(25deg); }
+    60% { transform: rotate(-5deg) rotateY(-10deg); }
+    100% { transform: rotate(-5deg) rotateY(0deg); }
+}
+@keyframes flip-tease-4 {
+    0% { transform: rotate(12deg) rotateY(0deg); }
+    30% { transform: rotate(12deg) rotateY(25deg); }
+    60% { transform: rotate(12deg) rotateY(-10deg); }
+    100% { transform: rotate(12deg) rotateY(0deg); }
+}
+
+.flip-card.tease .flip-card-inner,
+.logo-flip.tease .flip-card-inner {
+    animation: flip-tease 0.8s ease-in-out !important;
+}
+.sticker-1.tease .flip-card-inner { animation: flip-tease-1 0.8s ease-in-out !important; }
+.sticker-2.tease .flip-card-inner { animation: flip-tease-2 0.8s ease-in-out !important; }
+.sticker-3.tease .flip-card-inner { animation: flip-tease-3 0.8s ease-in-out !important; }
+.sticker-4.tease .flip-card-inner { animation: flip-tease-4 0.8s ease-in-out !important; }
+
 /* ===================================
    HERO INTRO ANIMATIONS
    Profile hidden until stickers land;
