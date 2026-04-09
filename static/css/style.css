@@ -226,66 +226,180 @@ body:has(.loading-screen:not(.hidden)) {
 
 /* Wiggle Animations - one per sticker to maintain rotation and scale */
 @keyframes wiggle-1 {
-    0%, 100% { transform: rotate(-15deg) scale(1.15); }
-    25% { transform: rotate(-15.5deg) scale(1.15); }
-    75% { transform: rotate(-14.5deg) scale(1.15); }
+
+    0%,
+    100% {
+        transform: rotate(-15deg) scale(1.15);
+    }
+
+    25% {
+        transform: rotate(-15.5deg) scale(1.15);
+    }
+
+    75% {
+        transform: rotate(-14.5deg) scale(1.15);
+    }
 }
+
 @keyframes wiggle-2 {
-    0%, 100% { transform: rotate(8deg) scale(1.15); }
-    25% { transform: rotate(7.5deg) scale(1.15); }
-    75% { transform: rotate(8.5deg) scale(1.15); }
+
+    0%,
+    100% {
+        transform: rotate(8deg) scale(1.15);
+    }
+
+    25% {
+        transform: rotate(7.5deg) scale(1.15);
+    }
+
+    75% {
+        transform: rotate(8.5deg) scale(1.15);
+    }
 }
+
 @keyframes wiggle-3 {
-    0%, 100% { transform: rotate(-5deg) scale(1.15); }
-    25% { transform: rotate(-5.5deg) scale(1.15); }
-    75% { transform: rotate(-4.5deg) scale(1.15); }
+
+    0%,
+    100% {
+        transform: rotate(-5deg) scale(1.15);
+    }
+
+    25% {
+        transform: rotate(-5.5deg) scale(1.15);
+    }
+
+    75% {
+        transform: rotate(-4.5deg) scale(1.15);
+    }
 }
+
 @keyframes wiggle-4 {
-    0%, 100% { transform: rotate(12deg) scale(1.15); }
-    25% { transform: rotate(11.5deg) scale(1.15); }
-    75% { transform: rotate(12.5deg) scale(1.15); }
+
+    0%,
+    100% {
+        transform: rotate(12deg) scale(1.15);
+    }
+
+    25% {
+        transform: rotate(11.5deg) scale(1.15);
+    }
+
+    75% {
+        transform: rotate(12.5deg) scale(1.15);
+    }
 }
 
 /* Tease Animations - triggered on visibility/opening */
 @keyframes flip-tease {
-    0% { transform: rotateY(0deg); }
-    30% { transform: rotateY(25deg); }
-    60% { transform: rotateY(-10deg); }
-    100% { transform: rotateY(0deg); }
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    30% {
+        transform: rotateY(25deg);
+    }
+
+    60% {
+        transform: rotateY(-10deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
 }
+
 @keyframes flip-tease-1 {
-    0% { transform: rotate(-15deg) rotateY(0deg); }
-    30% { transform: rotate(-15deg) rotateY(25deg); }
-    60% { transform: rotate(-15deg) rotateY(-10deg); }
-    100% { transform: rotate(-15deg) rotateY(0deg); }
+    0% {
+        transform: rotate(-15deg) rotateY(0deg);
+    }
+
+    30% {
+        transform: rotate(-15deg) rotateY(25deg);
+    }
+
+    60% {
+        transform: rotate(-15deg) rotateY(-10deg);
+    }
+
+    100% {
+        transform: rotate(-15deg) rotateY(0deg);
+    }
 }
+
 @keyframes flip-tease-2 {
-    0% { transform: rotate(8deg) rotateY(0deg); }
-    30% { transform: rotate(8deg) rotateY(25deg); }
-    60% { transform: rotate(8deg) rotateY(-10deg); }
-    100% { transform: rotate(8deg) rotateY(0deg); }
+    0% {
+        transform: rotate(8deg) rotateY(0deg);
+    }
+
+    30% {
+        transform: rotate(8deg) rotateY(25deg);
+    }
+
+    60% {
+        transform: rotate(8deg) rotateY(-10deg);
+    }
+
+    100% {
+        transform: rotate(8deg) rotateY(0deg);
+    }
 }
+
 @keyframes flip-tease-3 {
-    0% { transform: rotate(-5deg) rotateY(0deg); }
-    30% { transform: rotate(-5deg) rotateY(25deg); }
-    60% { transform: rotate(-5deg) rotateY(-10deg); }
-    100% { transform: rotate(-5deg) rotateY(0deg); }
+    0% {
+        transform: rotate(-5deg) rotateY(0deg);
+    }
+
+    30% {
+        transform: rotate(-5deg) rotateY(25deg);
+    }
+
+    60% {
+        transform: rotate(-5deg) rotateY(-10deg);
+    }
+
+    100% {
+        transform: rotate(-5deg) rotateY(0deg);
+    }
 }
+
 @keyframes flip-tease-4 {
-    0% { transform: rotate(12deg) rotateY(0deg); }
-    30% { transform: rotate(12deg) rotateY(25deg); }
-    60% { transform: rotate(12deg) rotateY(-10deg); }
-    100% { transform: rotate(12deg) rotateY(0deg); }
+    0% {
+        transform: rotate(12deg) rotateY(0deg);
+    }
+
+    30% {
+        transform: rotate(12deg) rotateY(25deg);
+    }
+
+    60% {
+        transform: rotate(12deg) rotateY(-10deg);
+    }
+
+    100% {
+        transform: rotate(12deg) rotateY(0deg);
+    }
 }
 
 .flip-card.tease .flip-card-inner,
 .logo-flip.tease .flip-card-inner {
     animation: flip-tease 0.8s ease-in-out !important;
 }
-.sticker-1.tease .flip-card-inner { animation: flip-tease-1 0.8s ease-in-out !important; }
-.sticker-2.tease .flip-card-inner { animation: flip-tease-2 0.8s ease-in-out !important; }
-.sticker-3.tease .flip-card-inner { animation: flip-tease-3 0.8s ease-in-out !important; }
-.sticker-4.tease .flip-card-inner { animation: flip-tease-4 0.8s ease-in-out !important; }
+
+.sticker-1.tease .flip-card-inner {
+    animation: flip-tease-1 0.8s ease-in-out !important;
+}
+
+.sticker-2.tease .flip-card-inner {
+    animation: flip-tease-2 0.8s ease-in-out !important;
+}
+
+.sticker-3.tease .flip-card-inner {
+    animation: flip-tease-3 0.8s ease-in-out !important;
+}
+
+.sticker-4.tease .flip-card-inner {
+    animation: flip-tease-4 0.8s ease-in-out !important;
+}
 
 /* ===================================
    HERO INTRO ANIMATIONS
@@ -302,64 +416,115 @@ body:has(.loading-screen:not(.hidden)) {
     opacity: 0;
     transition: opacity 0.7s ease;
 }
+
 .image-flip.profile-visible {
     opacity: 1;
 }
 
-.sticker-1, .sticker-2, .sticker-3, .sticker-4 {
+.sticker-1,
+.sticker-2,
+.sticker-3,
+.sticker-4 {
     opacity: 0;
 }
 
 /* Sticker fly-in animations with dynamic scaling */
 @keyframes sticker1-fly-in {
-    0%   { transform: translate(180px, 180px) rotate(-15deg) scale(0.4); opacity: 0; }
-    70%  { opacity: 1; }
-    100% { transform: translate(0, 0) rotate(-15deg) scale(1.15); opacity: 1; }
+    0% {
+        transform: translate(180px, 180px) rotate(-15deg) scale(0.4);
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(-15deg) scale(1.15);
+        opacity: 1;
+    }
 }
+
 @keyframes sticker2-fly-in {
-    0%   { transform: translate(-180px, 180px) rotate(8deg) scale(0.4); opacity: 0; }
-    70%  { opacity: 1; }
-    100% { transform: translate(0, 0) rotate(8deg) scale(1.15); opacity: 1; }
+    0% {
+        transform: translate(-180px, 180px) rotate(8deg) scale(0.4);
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(8deg) scale(1.15);
+        opacity: 1;
+    }
 }
+
 @keyframes sticker3-fly-in {
-    0%   { transform: translate(180px, -180px) rotate(-5deg) scale(0.4); opacity: 0; }
-    70%  { opacity: 1; }
-    100% { transform: translate(0, 0) rotate(-5deg) scale(1.15); opacity: 1; }
+    0% {
+        transform: translate(180px, -180px) rotate(-5deg) scale(0.4);
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(-5deg) scale(1.15);
+        opacity: 1;
+    }
 }
+
 @keyframes sticker4-fly-in {
-    0%   { transform: translate(-180px, -180px) rotate(12deg) scale(0.4); opacity: 0; }
-    70%  { opacity: 1; }
-    100% { transform: translate(0, 0) rotate(12deg) scale(1.15); opacity: 1; }
+    0% {
+        transform: translate(-180px, -180px) rotate(12deg) scale(0.4);
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(12deg) scale(1.15);
+        opacity: 1;
+    }
 }
 
 .hero-animate .sticker-1 {
     animation: sticker1-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0s forwards,
-               wiggle-1 4s ease-in-out 0.8s infinite;
+        wiggle-1 4s ease-in-out 0.8s infinite;
 }
+
 .hero-animate .sticker-1.landed {
     transform: rotate(-15deg) scale(1.15) !important;
 }
 
 .hero-animate .sticker-2 {
     animation: sticker2-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0.15s forwards,
-               wiggle-2 4s ease-in-out 1s infinite;
+        wiggle-2 4s ease-in-out 1s infinite;
 }
+
 .hero-animate .sticker-2.landed {
     transform: rotate(8deg) scale(1.15) !important;
 }
 
 .hero-animate .sticker-3 {
     animation: sticker3-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0.3s forwards,
-               wiggle-3 4s ease-in-out 1.2s infinite;
+        wiggle-3 4s ease-in-out 1.2s infinite;
 }
+
 .hero-animate .sticker-3.landed {
     transform: rotate(-5deg) scale(1.15) !important;
 }
 
 .hero-animate .sticker-4 {
     animation: sticker4-fly-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) 0.45s forwards,
-               wiggle-4 4s ease-in-out 1.4s infinite;
+        wiggle-4 4s ease-in-out 1.4s infinite;
 }
+
 .hero-animate .sticker-4.landed {
     transform: rotate(12deg) scale(1.15) !important;
 }
@@ -1242,6 +1407,7 @@ body:has(.loading-screen:not(.hidden)) {
     .detail-title-container {
         height: 100px;
     }
+
     .detail-title-container .section-title,
     .detail-title-container .section-title-back {
         font-size: 1.5rem;
@@ -1307,10 +1473,12 @@ body:has(.loading-screen:not(.hidden)) {
     width: 6px;
     background: transparent;
 }
+
 .project-detail-right::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
 }
+
 .project-detail-right::-webkit-scrollbar-thumb {
     background-color: var(--neon-green);
     border-radius: 10px;
@@ -1340,7 +1508,7 @@ body:has(.loading-screen:not(.hidden)) {
         gap: 2rem;
         justify-items: center;
     }
-    
+
     .about-portrait-container {
         width: 200px;
         height: 300px;
@@ -1358,7 +1526,7 @@ body:has(.loading-screen:not(.hidden)) {
         height: 100vh;
         height: 100dvh;
     }
-    
+
     .project-detail-left {
         flex-shrink: 0;
         position: relative;
@@ -1443,33 +1611,33 @@ body:has(.loading-screen:not(.hidden)) {
         font-size: 0.8rem;
         line-height: 1.4;
     }
-    
+
     /* About Section Mobile */
     .about-content-wrapper {
         padding: 0 1rem;
     }
-    
+
     .about-poem-portrait-row {
         grid-template-columns: 1fr;
         gap: 2rem;
         justify-items: center;
     }
-    
+
     .about-portrait-container {
         width: 200px;
         height: 300px;
         order: 1;
     }
-    
+
     .about-poem {
         order: 2;
     }
-    
+
     .about-bottom-row {
         justify-content: center;
         width: 100%;
     }
-    
+
     .about-tagline-container {
         width: 100%;
     }
@@ -1496,8 +1664,11 @@ body:has(.loading-screen:not(.hidden)) {
         visibility: visible !important;
         pointer-events: auto !important;
     }
-    
-    .sticker-1, .sticker-2, .sticker-3, .sticker-4 {
+
+    .sticker-1,
+    .sticker-2,
+    .sticker-3,
+    .sticker-4 {
         position: absolute;
     }
 
@@ -1518,12 +1689,12 @@ body:has(.loading-screen:not(.hidden)) {
     .about-intro {
         font-size: 1rem;
     }
-    
+
     .about-poem-portrait-row {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .about-portrait-container {
         width: 150px;
         height: 250px;
@@ -1595,9 +1766,10 @@ body:has(.loading-screen:not(.hidden)) {
         overflow: hidden;
         padding: 0;
         height: 100vh;
-        height: 100dvh; /* dynamic viewport height — fixes mobile browser chrome */
+        height: 100dvh;
+        /* dynamic viewport height — fixes mobile browser chrome */
     }
-    
+
     .project-detail-left {
         flex-shrink: 0;
         background: var(--darker-bg);
@@ -1606,10 +1778,11 @@ body:has(.loading-screen:not(.hidden)) {
         height: auto;
         position: relative;
     }
-    
+
     .project-detail-right {
         flex: 1 1 0;
-        min-height: 0; /* critical — allows flex child to shrink below content size */
+        min-height: 0;
+        /* critical — allows flex child to shrink below content size */
         display: flex;
         flex-direction: column;
         gap: 0;
@@ -1623,12 +1796,12 @@ body:has(.loading-screen:not(.hidden)) {
         display: block;
         flex-shrink: 0;
     }
-    
+
     .project-info-title {
         font-size: 1.6rem;
         margin-bottom: 0.5rem;
     }
-    
+
     .project-info-description {
         font-size: 0.85rem;
         line-height: 1.6;
@@ -1638,11 +1811,11 @@ body:has(.loading-screen:not(.hidden)) {
     .project-info-category {
         margin-bottom: 0.75rem;
     }
-    
+
     .project-nav-buttons {
         display: none;
     }
-    
+
     .project-nav-buttons-mobile {
         background: var(--darker-bg);
         padding: 1.5rem 2rem;
@@ -1652,7 +1825,7 @@ body:has(.loading-screen:not(.hidden)) {
         margin: 0;
         flex-shrink: 0;
     }
-    
+
     .nav-btn {
         flex: 0 0 auto;
         min-width: unset;
@@ -1662,7 +1835,7 @@ body:has(.loading-screen:not(.hidden)) {
         display: flex;
         align-items: center;
     }
-    
+
     .close-project {
         top: 1.5rem;
         right: 1.5rem;
@@ -1676,31 +1849,31 @@ body:has(.loading-screen:not(.hidden)) {
     .project-detail-left {
         padding: 1.5rem 1rem;
     }
-    
+
     .project-info-title {
         font-size: 1.4rem;
         margin-bottom: 0.4rem;
     }
-    
+
     .project-info-category {
         font-size: 0.8rem;
         margin-bottom: 0.6rem;
     }
-    
+
     .project-info-description {
         font-size: 0.8rem;
         line-height: 1.55;
     }
-    
+
     .project-nav-buttons-mobile {
         padding: 1rem 1.5rem;
     }
-    
+
     .nav-btn {
         padding: 0;
         width: 90px;
     }
-    
+
     .close-project {
         top: 1rem;
         right: 1rem;
@@ -1722,7 +1895,7 @@ body:has(.loading-screen:not(.hidden)) {
         display: flex;
         flex-direction: column;
     }
-    
+
     .download-resume-btn {
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
@@ -1731,7 +1904,7 @@ body:has(.loading-screen:not(.hidden)) {
         right: auto;
         bottom: auto;
     }
-    
+
     .close-resume {
         top: 1.5rem;
         right: 1.5rem;
@@ -1740,7 +1913,7 @@ body:has(.loading-screen:not(.hidden)) {
         font-size: 1.5rem;
         z-index: 20;
     }
-    
+
     .resume-iframe {
         flex: 1;
         width: 100%;
@@ -1758,7 +1931,7 @@ body:has(.loading-screen:not(.hidden)) {
         display: flex;
         flex-direction: column;
     }
-    
+
     .download-resume-btn {
         padding: 0.75rem 1.25rem;
         font-size: 0.9rem;
@@ -1770,7 +1943,7 @@ body:has(.loading-screen:not(.hidden)) {
         right: auto;
         bottom: auto;
     }
-    
+
     .close-resume {
         top: 1rem;
         right: 1rem;
@@ -1779,7 +1952,7 @@ body:has(.loading-screen:not(.hidden)) {
         font-size: 1.4rem;
         z-index: 20;
     }
-    
+
     .resume-iframe {
         flex: 1;
         width: 100%;
