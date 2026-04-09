@@ -13,8 +13,8 @@ PROJECTS = [
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800',
         'gif': 'project-pub-1.gif',  # Project-specific GIF
-        'flip_text': 'Text for flip side here',
-        'description': 'This coffee table book explore the works of Gauri Gill, one of the most acclaimed contemporary photographers and my personal favourite. Her narratives in itself is awe inspiring in a sense that one can experience visually. This project deepened my understanding of conceptual storytelling and print production, allowing me to merge content, context and design into an immersive visual experience.',
+        'flip_text': 'Publication Design',
+        'description': 'This coffee table book explores the works of Gauri Gill, one of the most acclaimed contemporary photographers and my personal favourite. This project deepened my understanding of conceptual storytelling and print production, allowing me to merge content, context and design into an immersive visual experience.',
         'images': [
             'static/assets/pub1/pub 2.png',
             'static/assets/pub1/pub 3.png',
@@ -25,13 +25,13 @@ PROJECTS = [
     },
     {
         'id': 'pub-2',
-        'title': 'Editorial Magazine Design',
+        'title': 'Liminal - Margins of The Artist Way',
         'category': 'Publication Design',
         'category_slug': 'publication',
         'image': 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800',
         'gif': 'Artist way zine .gif',  # Project-specific GIF
-        'flip_text': 'Text for flip side here',
-        'description': 'A contemporary magazine layout exploring modern typography and grid systems.',
+        'flip_text': 'Experimental Publication Design',
+        'description': 'Picked up Julia Cameron\'s The Artist\'s Way last summer for a creative reset. This zine is a compilation of that journey, a walk-through ritual and releases. Check out the project for more context.',
         'images': [
             'static/assets/Artist way zine/1.png',
             'static/assets/Artist way zine/2.png',
@@ -52,7 +52,7 @@ PROJECTS = [
         ]
     },
     
-    # Branding - 2 projects (will display as 1 row x 2 columns)
+    # Branding - 2 projects (will display as 1 row x 2 columns) Currently just 1
     {
         'id': 'brand-1',
         'title': 'Breakvox',
@@ -60,8 +60,8 @@ PROJECTS = [
         'category_slug': 'branding',
         'image': 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800',
         'gif': 'project-brand-1.gif',  # Project-specific GIF
-        'flip_text': 'Text for flip side here',
-        'description': 'Complete brand identity for a sustainable coffee shop including logo, packaging, and collateral.',
+        'flip_text': 'Brand and Visual Identity',
+        'description': 'BreakVox is a vibrant music platform dedicated to spotlight independent artists and niche taste. With bold and expressive identity, BreakVox goes beyond casual streaming, building real and meaningful experiences. ',
         'images': [
             'static/assets/Beakvox branding project/b1.gif',
             'static/assets/Beakvox branding project/b2.png',
@@ -88,7 +88,7 @@ PROJECTS = [
         'category_slug': 'route',
         'image': 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200',
         'gif': 'project-route-1.gif',  # Project-specific GIF
-        'flip_text': 'Text for flip side here',
+        'flip_text': 'Branding and Campaign Design',
         'description': 'Based on a brief by Ather Energy for the Kyoorius Young Blood Awards, Route Zero is a youth-led riders club built around the philosophy of zero, zero emissions and zero as a circle.This project was developed in collaboration alongside a friend, with equal credit shared for the concept and execution.',
         'images': [
             'static/assets/ather/ather 2.png',
@@ -112,8 +112,8 @@ PROJECTS = [
         'category_slug': 'design',
         'image': 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200',
         'gif': 'project-design-1.gif',  # Project-specific GIF
-        'flip_text': 'Text for flip side here',
-        'description': 'A month-long daily design challenge exploring different creative disciplines.',
+        'flip_text': 'Graphic Exploration.',
+        'description': 'Born purely out of passion, an unrecognised void led me to tell stories beyond any external pressure, simply allowing creativity to flow. While I have grown since this project, I still keep it as an account of that vulnerable expression. The following is just a glimpse, for a closer look, check out my Instagram.',
         'images': [
             'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200',
             'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200',
