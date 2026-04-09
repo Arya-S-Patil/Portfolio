@@ -52,24 +52,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     // MENU TOGGLE
     // ===================================
-    const menuButton = document.getElementById('menu-button');
-    const menuDropdown = document.getElementById('menu-dropdown');
+    const menuButtonMobile = document.getElementById('menu-button-mobile');
+    const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
     
-    menuButton.addEventListener('click', function(e) {
-        e.stopPropagation();
-        menuDropdown.classList.toggle('active');
-    });
+    if (menuButtonMobile && mobileMenuDropdown) {
+        menuButtonMobile.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileMenuDropdown.classList.toggle('active');
+            menuButtonMobile.classList.toggle('active');
+        });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!menuDropdown.contains(e.target) && e.target !== menuButton) {
-            menuDropdown.classList.remove('active');
-        }
-    });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuDropdown.contains(e.target) && e.target !== menuButtonMobile && !menuButtonMobile.contains(e.target)) {
+                mobileMenuDropdown.classList.remove('active');
+                menuButtonMobile.classList.remove('active');
+            }
+        });
+    }
 
-    // Smooth scroll for menu items
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(item => {
+    // Smooth scroll for menu items (desktop and mobile)
+    const navLinks = document.querySelectorAll('.nav-link, .menu-item');
+    navLinks.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
@@ -77,7 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
-                menuDropdown.classList.remove('active');
+                if (mobileMenuDropdown) {
+                    mobileMenuDropdown.classList.remove('active');
+                    menuButtonMobile.classList.remove('active');
+                }
             }
         });
     });

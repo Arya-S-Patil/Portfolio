@@ -100,74 +100,134 @@ body:has(.loading-screen:not(.hidden)) {
 /* ===================================
    MENU BUTTON & DROPDOWN
    =================================== */
-.menu-button {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
+.navbar {
+    position: absolute; /* Not sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    background: transparent;
-    border: none;
-    color: var(--neon-green);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
+    background-color: transparent; /* Not a separate color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+.navbar-left {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Work Sans', sans-serif;
+    gap: 1rem;
 }
 
-.menu-star {
-    color: var(--neon-green);
-    font-size: 1.2rem;
+.nav-profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: white; /* Make sure the transparent PNG shows nicely */
 }
 
-.menu-button:hover {
-    transform: scale(1.1);
+.nav-name {
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
 
-.menu-dropdown {
-    position: absolute;
-    top: 5rem;
-    left: 2rem;
-    background: var(--dark-bg);
-    border: 2px solid var(--neon-green);
-    border-radius: 10px;
-    padding: 1rem;
+.navbar-right.desk-menu {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    gap: 4rem;
 }
 
-.menu-dropdown.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.menu-item {
+.nav-link {
     color: var(--cream);
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
-.menu-item:hover {
-    background-color: var(--neon-green);
+.nav-link:hover {
+    color: var(--neon-green);
+}
+
+.menu-button-mobile {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001; /* Ensure it's above the slider */
+}
+
+.menu-button-mobile .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--cream); /* Often white/cream, adjust if user wants green */
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Horizontal slide-in menu for mobile */
+.mobile-menu-dropdown {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden by default */
+    width: 60%;
+    min-width: 200px;
+    height: 100vh;
+    background: var(--dark-bg);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Space for navbar */
+    transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+.mobile-menu-dropdown.active {
+    right: 0;
+}
+
+.mobile-menu-dropdown .menu-item {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 1.5rem 2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-dropdown .menu-item:hover {
     color: var(--darker-bg);
+    background-color: var(--neon-green);
+}
+
+/* Hamburger to X animation when active */
+.menu-button-mobile.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.menu-button-mobile.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-button-mobile.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .navbar-right.desk-menu {
+        display: none;
+    }
+    .menu-button-mobile {
+        display: flex;
+    }
+    
+    .navbar {
+        padding: 2rem 1.5rem;
+    }
 }
 
 /* ===================================

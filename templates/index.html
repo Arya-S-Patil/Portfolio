@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.2">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.4">
 </head>
 
 <body>
@@ -28,16 +28,30 @@
         </div>
     </div>
 
-    <!-- Menu Button -->
-    <button class="menu-button" id="menu-button">
-        <span class="menu-star">★</span>
-        <span>Menu</span>
-    </button>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='images/profile-back.png') }}" class="nav-profile-img" alt="Profile">
+            <span class="nav-name">Palak Raka</span>
+        </div>
+        <div class="navbar-right desk-menu">
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        
+        <!-- Mobile Hamburger -->
+        <button class="menu-button-mobile" id="menu-button-mobile">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
 
-    <!-- Dropdown Menu -->
-    <div class="menu-dropdown" id="menu-dropdown">
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu-dropdown" id="mobile-menu-dropdown">
         <a href="#projects" class="menu-item">Projects</a>
-        <a href="#about" class="menu-item">About Me</a>
+        <a href="#about" class="menu-item">About</a>
         <a href="#contact" class="menu-item">Contact</a>
     </div>
 
@@ -380,7 +394,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}?v=1.1"></script>
 </body>
 
 </html>
