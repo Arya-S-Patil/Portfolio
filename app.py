@@ -48,7 +48,7 @@ PROJECTS = [
             'static/assets/Artist way zine/13.webp',
             'static/assets/Artist way zine/14.webp',
             'static/assets/Artist way zine/15.GIF',
-            'static/assets/Artist way zine/last video.mp4'
+            'static/assets/Artist way zine/last_video.webm'
         ]
     },
     
