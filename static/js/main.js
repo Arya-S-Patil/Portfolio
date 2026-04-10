@@ -56,10 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    Promise.all([
-        waitForImagesToLoad(),
-        new Promise(resolve => setTimeout(resolve, 1200))
-    ]).then(hideLoadingScreen);
+    waitForImagesToLoad();
+    setTimeout(hideLoadingScreen, 7000);
 
     // ===================================
     // MENU TOGGLE
