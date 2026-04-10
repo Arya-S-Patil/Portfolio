@@ -47,8 +47,8 @@ PROJECTS = [
             'static/assets/Artist way zine/12.png',
             'static/assets/Artist way zine/13.png',
             'static/assets/Artist way zine/14.png',
-            'static/assets/Artist way zine/15.png',
-            'static/assets/Artist way zine/16.png'
+            'static/assets/Artist way zine/15.GIF',
+            'static/assets/Artist way zine/last video.mp4'
         ]
     },
     
@@ -115,8 +115,8 @@ PROJECTS = [
         'flip_text': 'Graphic Exploration.',
         'description': 'Born purely out of passion, an unrecognised void led me to tell stories beyond any external pressure, simply allowing creativity to flow. While I have grown since this project, I still keep it as an account of that vulnerable expression. The following is just a glimpse, for a closer look, check out my Instagram.',
         'images': [
-            'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200',
-            'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200',
+            'static/assets/30 days of design/1.gif',
+            'static/assets/30 days of design/2 scroll.png',
         ]
     },
     

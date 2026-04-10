@@ -9,45 +9,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // LOADING SCREEN
     // ===================================
     const loadingScreen = document.getElementById('loading-screen');
-    
     console.log('Loading screen initialized');
-    
-    // Hide loading screen after 5 seconds to let GIF play
-    setTimeout(() => {
+
+    const waitForImagesToLoad = () => {
+        const images = Array.from(document.images);
+        const imagePromises = images.map(image => {
+            if (image.complete && image.naturalHeight !== 0) {
+                return Promise.resolve();
+            }
+            return new Promise(resolve => {
+                image.addEventListener('load', resolve, { once: true });
+                image.addEventListener('error', resolve, { once: true });
+            });
+        });
+        return Promise.all(imagePromises);
+    };
+
+    const hideLoadingScreen = () => {
         console.log('Hiding loading screen');
         if (loadingScreen) {
             loadingScreen.classList.add('hidden');
             loadingScreen.style.display = 'none';
             document.body.style.overflow = '';
         }
-        
-        // Trigger sticker fly-in animation
+
         const profileWrapper = document.querySelector('.profile-stickers-wrapper');
         if (profileWrapper) {
             profileWrapper.classList.add('hero-animate');
         }
-        
-        // Add "landed" class to stickers after animation completes (0.7s)
+
         setTimeout(() => {
             const stickers = document.querySelectorAll('.sticker');
             stickers.forEach(sticker => {
                 sticker.classList.add('landed');
             });
 
-            // Trigger tease animation on hero elements shortly after landing
             setTimeout(() => {
                 const heroFlips = document.querySelectorAll('.hero-animate .sticker, #logo-flip');
                 heroFlips.forEach(card => playTeaseAnimation(card));
             }, 800);
         }, 700);
-        
-        // Show profile image immediately
+
         const profileImage = document.querySelector('.image-flip');
         if (profileImage) {
             profileImage.classList.add('profile-visible');
         }
-        
-    }, 5000); // Show loading GIF for 5 seconds
+    };
+
+    Promise.all([
+        waitForImagesToLoad(),
+        new Promise(resolve => setTimeout(resolve, 1200))
+    ]).then(hideLoadingScreen);
 
     // ===================================
     // MENU TOGGLE
@@ -310,9 +322,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Preload detail window images
             if (project.images && Array.isArray(project.images)) {
                 project.images.forEach(imageUrl => {
-                    const img = new Image();
-                    img.src = imageUrl.startsWith('http') ? imageUrl : ('/' + imageUrl);
-                    window._preloadedImages.push(img);
+                    if (!imageUrl.toLowerCase().endsWith('.mp4') && !imageUrl.toLowerCase().endsWith('.webm')) {
+                        const img = new Image();
+                        img.src = imageUrl.startsWith('http') ? imageUrl : ('/' + imageUrl);
+                        window._preloadedImages.push(img);
+                    }
                 });
             }
             // Preload main static image
@@ -357,10 +371,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clear and populate images
         detailImages.innerHTML = '';
         project.images.forEach(imageUrl => {
-            const img = document.createElement('img');
-            img.src = imageUrl.startsWith('http') ? imageUrl : ('/' + imageUrl);
-            img.alt = project.title;
-            detailImages.appendChild(img);
+            let mediaEl;
+            if (imageUrl.toLowerCase().endsWith('.mp4') || imageUrl.toLowerCase().endsWith('.webm')) {
+                mediaEl = document.createElement('video');
+                mediaEl.src = imageUrl.startsWith('http') ? imageUrl : ('/' + imageUrl);
+                mediaEl.autoplay = true;
+                mediaEl.loop = true;
+                mediaEl.muted = true;
+                mediaEl.playsInline = true;
+            } else {
+                mediaEl = document.createElement('img');
+                mediaEl.src = imageUrl.startsWith('http') ? imageUrl : ('/' + imageUrl);
+                mediaEl.alt = project.title;
+            }
+            detailImages.appendChild(mediaEl);
         });
 
         // Scroll back to top
