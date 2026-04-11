@@ -255,7 +255,7 @@ Mobile-specific features:
 **Modify color scheme**:
 - Edit CSS variables in `:root` selector (lines 10-16)
 
-## � Dependencies
+##  Dependencies
 
 - Flask - Web framework
 - Python 3.7+ - Runtime
