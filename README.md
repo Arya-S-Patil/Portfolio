@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website with flipping stickers, animations, and responsive design.
 
-## 🎨 Features
+## Features
 
 - **Loading Screen**: Animated GIF on page load
 - **Interactive Hero Section**: Flippable central image, 4 stickers, and logo banner
@@ -13,7 +13,7 @@ A modern, interactive portfolio website with flipping stickers, animations, and 
 - **Project Detail Modal**: Full project galleries with navigation
 - **Fully Responsive**: Mobile-first design with media queries
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.7+
@@ -36,7 +36,7 @@ python app.py
 http://localhost:10000
 ```
 
-## 📁 File Structure
+## File Structure
 
 ```
 Portfolio/
@@ -44,204 +44,134 @@ Portfolio/
 ├── README.md                   # This file
 ├── requirements.txt            # Python dependencies
 ├── templates/
-│   └── index.html             # Main HTML template
+│   └── index.html              # Main HTML template
 ├── static/
 │   ├── css/
-│   │   ├── style.css          # All styles
-│   │   └── style.css.bak      # Backup
+│   │   ├── style.css           # Main stylesheet
+│   │   └── style.css.bak       # Backup stylesheet
 │   ├── js/
-│   │   └── main.js            # All JavaScript
-│   ├── images/                # Hero section images
-│   │   ├── profile.png        # Central image (front)
-│   │   ├── profile-back.png   # Central image (back)
-│   │   ├── sticker1.png       # Sticker 1 (front)
-│   │   ├── sticker1-back.png  # Sticker 1 (back)
-│   │   ├── sticker2.png       # Sticker 2 (front)
-│   │   ├── sticker2-back.png  # Sticker 2 (back)
-│   │   ├── sticker3.png       # Sticker 3 (front)
-│   │   ├── sticker3-back.png  # Sticker 3 (back)
-│   │   ├── sticker4.png       # Sticker 4 (front)
-│   │   ├── sticker4-back.png  # Sticker 4 (back)
-│   │   ├── portrait.gif       # Animated portrait
-│   │   ├── behance-icon.png   # Social icon
-│   │   ├── instagram-icon.png # Social icon
-│   │   ├── linkedin-icon.png  # Social icon
-│   │   └── medium-icon.png    # Social icon
+│   │   └── main.js             # Front-end behavior and filtering
+│   ├── images/                 # Hero and UI images
+│   │   ├── profile.webp
+│   │   ├── profile-back.webp
+│   │   ├── sticker1.webp
+│   │   ├── sticker1-back.webp
+│   │   ├── sticker2.webp
+│   │   ├── sticker2-back.webp
+│   │   ├── sticker3.webp
+│   │   ├── sticker3-back.webp
+│   │   ├── sticker4.webp
+│   │   ├── sticker4-back.webp
+│   │   ├── portrait.gif
+│   │   ├── portrait.webp
+│   │   ├── behance-icon.webp
+│   │   ├── instagram-icon.webp
+│   │   ├── linkedin-icon.webp
+│   │   ├── medium-icon.webp
+│   │   ├── Back.webp
+│   │   ├── Cross.webp
+│   │   ├── next.webp
+│   │   └── previous.webp
 │   └── assets/
-│       ├── loading.gif        # Loading screen animation
-│       ├── loading2.gif       # Alternative loading
-│       ├── resume.pdf         # Your resume PDF
-│       ├── projects/          # Project-specific GIFs
-│       │   ├── project-pub-1.gif
-│       │   ├── project-pub-2.gif
-│       │   ├── project-brand-1.gif
-│       │   ├── project-brand-2.gif
-│       │   ├── project-photo-1.gif
-│       │   ├── project-route-1.gif
-│       │   ├── project-design-1.gif
-│       │   ├── project-blog-1.gif
-│       │   └── Sandy_Loading.gif
-│       ├── pub1/              # Publication project images
-│       │   ├── pub 2.png
-│       │   ├── pub 3.png
-│       │   ├── pub 4.png
-│       │   ├── pub 5.png
-│       │   └── pub 6.png
-│       └── ather/             # Ather x Route Zero images
-│           ├── ather 2.png
-│           ├── ather 3.png
-│           ├── ather 4.png
-│           ├── ather 5.png
-│           ├── ather 6.png
-│           ├── ather 7.png
-│           ├── ather 8.png
-│           ├── ather 9.png
-│           └── ather 10.png
+│       ├── loading.gif         # Loading animation
+│       ├── loading2.gif        # Alternate loading animation
+│       ├── resume.pdf          # Resume PDF used by modal
+│       ├── projects/           # Project GIFs and preview assets
+│       ├── Artist way zine/    # Publication project assets
+│       ├── Beakvox branding project/  # Branding project assets
+│       ├── ather/              # Ather x Route Zero project assets
+│       ├── pub1/               # Publication project images
+│       └── 30 days of design/  # Challenge project assets
 ```
 
-## 🎨 Customization Guide
+## Customization Guide
 
 ### 1. Replace Demo Images
 
-All demo images are **placeholder images**. Replace them with your actual images:
+Replace the actual files used by the current repo:
 
 #### Hero Section Images
-- `static/images/profile.png` - Your main profile photo (400x400px recommended)
-- `static/images/profile-back.png` - Alternative profile image (same size)
-- `static/images/sticker1.png` to `sticker4.png` - Your sticker designs
-- `static/images/sticker1-back.png` to `sticker4-back.png` - Sticker backs
-- `static/images/logo-back.png` - Logo banner back image
-
-#### About Section
-- `static/images/illustration.png` - Your illustration (400x500px)
-- `static/images/portrait.gif` - Animated portrait (300x400px)
-
-#### GIFs
-- `static/assets/loading.gif` - Loading animation
-- `static/assets/loading2.gif` - Alternative loading animation
+- `static/images/profile.webp` - main profile image
+- `static/images/profile-back.webp` - alternate profile image
+- `static/images/sticker1.webp` to `static/images/sticker4.webp` - sticker fronts
+- `static/images/sticker1-back.webp` to `static/images/sticker4-back.webp` - sticker backs
+- `static/images/portrait.gif` - animated portrait
 
 #### Social Icons
-- Replace all `*-icon.png` files with actual social media icons (80x80px)
+- `static/images/behance-icon.webp`
+- `static/images/instagram-icon.webp`
+- `static/images/linkedin-icon.webp`
+- `static/images/medium-icon.webp`
 
-#### Resume
-- `static/assets/resume.pdf` - **REPLACE WITH YOUR ACTUAL RESUME**
+#### Loading and Resume
+- `static/assets/loading.gif`
+- `static/assets/loading2.gif`
+- `static/assets/resume.pdf`
 
-### 2. Update Content
+#### Project Asset Folders
+- `static/assets/Artist way zine/`
+- `static/assets/Beakvox branding project/`
+- `static/assets/ather/`
+- `static/assets/pub1/`
+- `static/assets/30 days of design/`
+- `static/assets/projects/`
 
-#### Personal Information (templates/index.html)
+### 2. Update Page Content
 
-**About Section** (lines 245-260):
-```html
-<p class="about-intro">
-    Morning! I'm <strong>YOUR NAME</strong>, an aspiring...
-    <!-- Update with your bio -->
-</p>
-```
+#### HTML Content
+Update `templates/index.html` for the displayed text, project labels, contact info, and resume modal content.
 
-**Poem** (lines 265-276):
-```html
-<blockquote>
-    <!-- Replace with your own poem or remove this section -->
-</blockquote>
-```
+- Hero section content
+- About section text and biography
+- Contact email and phone links
+- Resume download button and modal
 
-**Contact Info** (lines 355-365):
-```html
-<a href="mailto:YOUR_EMAIL@gmail.com" class="contact-email">
-    YOUR_EMAIL@gmail.com
-</a>
+#### Project Data
+The project listings are defined in `app.py` inside the `PROJECTS` array.
 
-<a href="tel:+91YOUR_PHONE" class="contact-phone">
-    +91 YOUR_PHONE
-</a>
-```
-
-#### Projects (app.py)
-
-Edit the `PROJECTS` array (lines 7-135):
-
-**Project Data Structure**:
-```python
-{
-    'id': 'unique-id',
-    'title': 'Project Title',
-    'category': 'Category Name',
-    'category_slug': 'category-slug',
-    'image': 'https://image-url.jpg',  # Static thumbnail
-    'gif': 'project-name.gif',         # Animated GIF
-    'description': 'Your description',
-    'images': [
-        'static/assets/folder/image1.png',
-        'static/assets/folder/image2.png'
-    ]
-}
-```
-
-**Important Project Requirements**:
-- **Static image**: URL or local path shown initially
-- **GIF filename**: Placed in `static/assets/projects/`
-- **Category slug**: Must match a category in `CATEGORIES`
-- **Images array**: Can be URLs or local asset paths
+Each project object includes:
+- `id` - unique project identifier
+- `title` - project title
+- `category` - display category name
+- `category_slug` - filter slug used by the UI
+- `image` - initial thumbnail image URL
+- `gif` - project GIF filename in `static/assets/projects/`
+- `description` - project description
+- `images` - list of asset paths used by the project detail modal
 
 #### Categories
+The available categories in `app.py` are:
+- `all`
+- `publication`
+- `branding`
+- `route`
+- `design`
 
-Edit `CATEGORIES` array in app.py (lines 137-145). The structure is:
-```python
-{'name': 'Display Name', 'slug': 'url-slug'}
+Make sure each `project['category_slug']` matches one of these slugs.
+
+### 3. Installation and Local Run
+
+Install dependencies and start the Flask app:
+
+```bash
+pip install -r requirements.txt
+python app.py
 ```
 
-The `slug` must match the `category_slug` used in your projects. Current categories:
-- `publication` - Publication Design
-- `branding` - Branding
-- `photo` - Photo Essay
-- `route` - Ather x Route Zero
-- `design` - 30 Days of Design
-- `blogs` - Blogs
+Then open:
 
-### 3. Customize Colors
-
-Edit CSS variables in `static/css/style.css` (lines 10-16):
-```css
-:root {
-    --neon-green: #B8FF3C;       /* Primary accent - titles & highlights */
-    --dark-bg: #1a1a1a;          /* Light dark background */
-    --darker-bg: #0f0f0f;        /* Darker background */
-    --cream: #F5F0E8;            /* Text color */
-    --pink: #D64C7F;             /* Secondary accent - banners */
-    --pink-light: #E57FA0;       /* Light pink variant */
-}
+```
+http://localhost:10000
 ```
 
-**Background Pattern**: Sections alternate between `--dark-bg` and `--darker-bg` for visual contrast.
+The app listens on port `10000` by default.
 
-### 4. Fonts
+### 4. Notes on Current Repo Content
 
-Current fonts (from Google Fonts):
-- **Rubik Vinyl** - Section titles and banners
-- **Work Sans** - Body text
-
-To change fonts, update the Google Fonts link in `templates/index.html` (line 11) and the CSS font-family declarations.
-
-### 5. Social Media Links
-
-Update social media URLs in `templates/index.html` (lines 340-360):
-```html
-<a href="https://www.behance.net/YOUR_USERNAME" class="social-link" target="_blank">
-    <img src="{{ url_for('static', filename='images/behance-icon.png') }}" alt="Behance">
-</a>
-
-<a href="https://www.instagram.com/YOUR_USERNAME" class="social-link" target="_blank">
-    <img src="{{ url_for('static', filename='images/instagram-icon.png') }}" alt="Instagram">
-</a>
-
-<a href="https://www.linkedin.com/in/YOUR_USERNAME" class="social-link" target="_blank">
-    <img src="{{ url_for('static', filename='images/linkedin-icon.png') }}" alt="LinkedIn">
-</a>
-
-<a href="https://medium.com/@YOUR_USERNAME" class="social-link" target="_blank">
-    <img src="{{ url_for('static', filename='images/medium-icon.png') }}" alt="Medium">
-</a>
-```
+- The repo uses `.webp` image assets in `static/images/`.
+- `static/assets/resume.pdf` is the resume file used by the resume modal.
+- Project GIFs are stored in `static/assets/projects/`.
+- `requirements.txt` currently includes `Flask==3.0.0` and `gunicorn`.
 
 ## 🌐 API Endpoints
 
