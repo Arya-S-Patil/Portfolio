@@ -283,15 +283,6 @@ Example deployment command:
 PORT=8080 python app.py
 ```
 
-### Deploy to Hosting Services
-- **Heroku**: Add Procfile, push to Heroku
-- **Vercel**: Not compatible (Node.js only)
-- **Netlify**: Not compatible (static site only)  
-- **PythonAnywhere**: Upload files, configure WSGI
-- **AWS/GCP/Azure**: Deploy Flask app to compute service
+### Deployed to Hosting Service currently using render
+- **Render**: (https://portfolio-palak.onrender.com)
 
-##  Resources
-
-- [Flask Documentation](https://flask.palletsprojects.com/)
-- [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
