@@ -116,7 +116,9 @@ PROJECTS = [
         'description': 'Born purely out of passion, an unrecognised void led me to tell stories beyond any external pressure, simply allowing creativity to flow. While I have grown since this project, I still keep it as an account of that vulnerable expression. The following is just a glimpse, for a closer look, check out my Instagram.',
         'images': [
             'static/assets/30 days of design/1.gif',
-            'static/assets/30 days of design/2 scroll.png',
+            'static/assets/30 days of design/1.png',
+            'static/assets/30 days of design/2.png',
+            'static/assets/30 days of design/3.png',       
         ]
     },
     
