@@ -173,7 +173,7 @@ The app listens on port `10000` by default.
 - Project GIFs are stored in `static/assets/projects/`.
 - `requirements.txt` currently includes `Flask==3.0.0` and `gunicorn`.
 
-## 🌐 API Endpoints
+##  API Endpoints
 
 The Flask app provides JSON APIs for dynamic content:
 
@@ -185,7 +185,7 @@ The Flask app provides JSON APIs for dynamic content:
 - **POST** `/api/contact` - Contact form submission
   - Body: `{"name": "", "email": "", "message": ""}`
 
-## 📱 Responsive Breakpoints
+##  Responsive Breakpoints
 
 - **Desktop**: 1025px and up (default)
 - **Tablet**: 768px - 1024px
@@ -199,7 +199,7 @@ Mobile-specific features:
 - Adjusted banner padding for text overflow prevention
 - Touch-friendly tap-to-flip interactions
 
-## 🎯 Key Interactions
+## Key Interactions
 
 ### Flip Cards
 - **Desktop**: Hover to flip stickers and logo
@@ -226,7 +226,7 @@ Mobile-specific features:
 - **Close**: X button or ESC key
 - **Images**: Swipeable on mobile, scrollable on desktop
 
-## 🛠 Development
+## Development
 
 ### Project Structure
 
@@ -265,7 +265,7 @@ Install with:
 pip install -r requirements.txt
 ```
 
-## 🚀 Deployment
+##  Deployment
 
 ### Local Testing
 ```bash
@@ -290,7 +290,7 @@ PORT=8080 python app.py
 - **PythonAnywhere**: Upload files, configure WSGI
 - **AWS/GCP/Azure**: Deploy Flask app to compute service
 
-## 📚 Resources
+##  Resources
 
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
