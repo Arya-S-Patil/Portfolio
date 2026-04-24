@@ -67,7 +67,7 @@ PROJECTS = [
             'static/assets/Beakvox branding project/b2.webp',
             'static/assets/Beakvox branding project/b3.webp',
             'static/assets/Beakvox branding project/b4.png',
-            'static/assets/Beakvox branding project/b4 (2).gif',
+            'static/assets/Beakvox branding project/breakvoxprocess.gif',
             'static/assets/Beakvox branding project/b5.webp',
             'static/assets/Beakvox branding project/b6.webp',
             'static/assets/Beakvox branding project/b7.webp',
