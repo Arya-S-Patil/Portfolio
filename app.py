@@ -76,8 +76,7 @@ PROJECTS = [
             'static/assets/Beakvox branding project/b10.webp',
             'static/assets/Beakvox branding project/b11.webp',
             'static/assets/Beakvox branding project/b12.webp',
-            'static/assets/Beakvox branding project/b13.webp',
-            'static/assets/Beakvox branding project/breakvox logo process gif b4.gif'
+            'static/assets/Beakvox branding project/b13.webp'
 
         ]
     },
