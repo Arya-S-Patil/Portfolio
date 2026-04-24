@@ -2,6 +2,14 @@
    CLIMBING.IN Portfolio CSS - FIXED
    =================================== */
 
+/* Custom Font */
+@font-face {
+    font-family: 'MyFreehand';
+    src: url('/static/fonts/MyFreehandFont2.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;
@@ -89,8 +97,9 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .loading-text {
-    font-family: 'Rubik Vinyl', cursive;
-    font-size: 2.5rem;
+    font-family: 'MyFreehand', cursive;
+    text-transform: uppercase;
+    font-size: 3.5rem;
     color: var(--neon-green);
     letter-spacing: 3px;
     position: relative;
@@ -885,8 +894,9 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .logo-text {
-    font-family: 'Rubik Vinyl', cursive;
-    font-size: clamp(28px, 5.5vw, 64px);
+    font-family: 'MyFreehand', cursive;
+    text-transform: uppercase;
+    font-size: clamp(40px, 7vw, 80px);
     font-weight: 400;
     color: var(--pink);
     letter-spacing: 4px;
@@ -943,8 +953,9 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .section-title {
-    font-family: 'Rubik Vinyl', cursive;
-    font-size: clamp(1.4rem, 4.5vw, 3rem);
+    font-family: 'MyFreehand', cursive;
+    text-transform: uppercase;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
     color: var(--neon-green);
     margin: 0;
     text-align: center;
@@ -952,8 +963,9 @@ body:has(.loading-screen:not(.hidden)) {
 }
 
 .section-title-back {
-    font-family: 'Rubik Vinyl', cursive;
-    font-size: clamp(1.4rem, 4.5vw, 3rem);
+    font-family: 'MyFreehand', cursive;
+    text-transform: uppercase;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
     color: var(--neon-green);
     margin: 0;
     text-align: center;
